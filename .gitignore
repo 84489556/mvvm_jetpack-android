@@ -1,0 +1,25 @@
+
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+
+index.android.jsbundle
+/index.js
+/node_modules_modify
+/package.json
+/package-lock.json
+/node_modules
+/packaging.info
