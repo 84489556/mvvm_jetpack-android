@@ -1,25 +1,15 @@
-
-# OSX
-#
-.DS_Store
-
-# Android/IntelliJ
-#
-build/
-.idea
-.gradle
-local.properties
 *.iml
-
-# BUCK
-buck-out/
-\.buckd/
-*.keystore
-
-index.android.jsbundle
-/index.js
-/node_modules_modify
-/package.json
-/package-lock.json
-/node_modules
-/packaging.info
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/.idea/
