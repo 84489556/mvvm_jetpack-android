@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/shutdown"
+        android:layout_width="wrap_content"
+        android:text="关闭websocket"
+        android:layout_height="wrap_content"
+        android:onClick="shutdownWebSocket"
+        />
+
+
+    <Button
+        android:id="@+id/isConnect"
+        android:layout_width="wrap_content"
+        android:text="是否还保持着连接"
+        android:layout_height="wrap_content"
+        android:onClick="isConnect"
+        />
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:text="连接websocket"
+        android:layout_height="wrap_content"
+        android:onClick="connect"
+        />
+
+</LinearLayout>
