@@ -12,20 +12,6 @@ public class RetrofitService {
     private static Retrofit.Builder retrofitBuilder = null;
     private static OkHttpClient okHttpClient = null;
 
-    /**
-     * 可以自定义retrofit
-     */
-    public static void setRetrofitBuilder(Retrofit.Builder retrofitBuilder) {
-        RetrofitService.retrofitBuilder = retrofitBuilder;
-    }
-
-    /**
-     * 可以自定义OkHttpClient
-     */
-    public static void setOkHttpClient(OkHttpClient oc) {
-        okHttpClient = oc;
-    }
-
 
     public static <T> T createService(Class<T> serviceClass) {
         OkHttpClient thisOkHttpClient = okHttpClient != null ? okHttpClient : OkHttp.getInstance().getHttpClient();

@@ -7,6 +7,7 @@ import com.yd.huixuangu.user.bean.UserBean;
 import java.util.Map;
 
 import io.reactivex.rxjava3.core.Observable;
+import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -34,8 +35,13 @@ public interface  ApiService  {
     Observable<GaoguanjingmaishichangtongjiBean> gaoguanjingmaishichangtongji();
 
 
-    @FormUrlEncoded
-    @Headers("host:user")
-    @POST("system/login")
-    Observable<String> changePWD(@FieldMap Map<String, String> map);
+    //    @FormUrlEncoded
+    @Headers({"Content-type:application/json;charset=UTF-8","host:"+HostManage.HostKey.YDY})
+    @POST(SocketURLHelp.nodeTree)
+    Observable<String> zbjClasses(@Body RequestBody params);
+
+
+    @Headers({"Content-type:application/json;charset=UTF-8","host:"+HostManage.HostKey.YDY})
+    @POST(SocketURLHelp.nodeTree)
+    Observable<String> hotStock(@Body RequestBody params);
 }

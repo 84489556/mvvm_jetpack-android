@@ -2,6 +2,8 @@ package com.yd.httpmudule;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;

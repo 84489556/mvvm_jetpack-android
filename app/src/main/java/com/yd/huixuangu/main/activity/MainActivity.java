@@ -11,7 +11,7 @@ import com.yd.huixuangu.main.presenter.MainPresenter;
 import com.yd.huixuangu.user.activity.LoginActivity;
 
 
-public class MainActivity extends BaseActivity<MainPresenter> implements IMain {
+public class MainActivity extends BaseActivity implements IMain {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

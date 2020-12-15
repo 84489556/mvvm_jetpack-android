@@ -14,29 +14,25 @@ public class HostHelp {
      * let hxgURLDebug = 'http://ydhxg-api.yd.com.cn:8443';
      * export const urlHXG = IsRelease ? hxgURLRelease : hxgURLDebug;
      */
+
+
     public static String HXG_HOST = "";
-    //test
-    public static  String MAIN_HOST = "http://www.xxxx.com";
+
+
+    /**
+     * 源达云节点
+     *ip: IsRelease ? 'yun.ydtg.com.cn': "csyun-slb.yd.com.cn",
+     */
+    public static String YDY_HOST = "";
+
     static {
         if (BuildConfig.DEBUG) {
-            HXG_HOST= "http://ydhxg-api.yd.com.cn:8443";
-             MAIN_HOST = "http://www.xxxxDebug.com";
+            HXG_HOST = "http://ydhxg-api.yd.com.cn:8443";
+            YDY_HOST = "https://yun.ydtg.com.cn";
         } else {
+            YDY_HOST = "https://yun.ydtg.com.cn";
             HXG_HOST = "https://ydhxg-prod-api.yd.com.cn";
-            MAIN_HOST = "http://www.xxxxRelesase.com";
         }
-    }
-
-
-
-
-    static String getHxgHost() {
-        return HXG_HOST;
-    }
-
-
-    public static String getMainHost() {
-        return MAIN_HOST;
     }
 
 

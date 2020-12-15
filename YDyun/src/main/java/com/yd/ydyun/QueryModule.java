@@ -7,7 +7,7 @@ public class QueryModule {
     private String equalTo;
     private String startAt;
     private String endAt;
-    private String limitToFirst;
+    private int limitToFirst;
     private String limitToLast;
     private String api = "/get";
     private boolean firstLevel = true;
@@ -31,7 +31,7 @@ public class QueryModule {
         this.endAt = endAt;
     }
 
-    public void setLimitToFirst(String limitToFirst) {
+    public void setLimitToFirst(int limitToFirst) {
         this.limitToFirst = limitToFirst;
     }
 
@@ -60,7 +60,7 @@ public class QueryModule {
         private String equalTo;
         private String startAt;
         private String endAt;
-        private String limitToFirst;
+        private int limitToFirst;
         private String limitToLast;
         private String nodePath;
         private String api ;
@@ -89,7 +89,7 @@ public class QueryModule {
             return this;
         }
 
-        public Builder limitToFirst(String limitToFirst) {
+        public Builder limitToFirst(int limitToFirst) {
             this.limitToFirst = limitToFirst;
             return this;
         }

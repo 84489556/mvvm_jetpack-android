@@ -11,7 +11,7 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 
-public abstract class BasePresenter<T extends BaseResponse> {
+public abstract class BasePresenter<T> {
     private ApiService service = RetrofitService.createService(ApiService.class);
 
     public BasePresenter() {
@@ -62,18 +62,12 @@ public abstract class BasePresenter<T extends BaseResponse> {
 //        BaseResponse base = (BaseResponse) o;
 //        switch (base.getStatusCode()) {
 //            case ServerDictionaries.SUCCESS:
-//                onNextPresenter(o);
+                onNextPresenter(t);
 //                break;
 //            case ServerDictionaries.NOT_LOGIN:
 //                tipDialog();
 //                break;
 //        }
-
-        if (t.isState()){
-            onNextPresenter(t);
-        }else {
-            onErrorPresenter(t.getMsg());
-        }
     }
 
 
@@ -122,4 +116,7 @@ public abstract class BasePresenter<T extends BaseResponse> {
 
 
     }
+
+    //----------------webSocket-----------------
+
 }

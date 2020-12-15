@@ -17,7 +17,7 @@ public class MainPresenter extends BasePresenter {
     }
 
     @Override
-    public void onNextPresenter(BaseResponse response) {
+    public void onNextPresenter(Object o) {
 
     }
 

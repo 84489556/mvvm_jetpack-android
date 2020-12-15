@@ -53,7 +53,12 @@ public class UrlInterceptor implements Interceptor {
                     .port(baseURL.port())//端口
                     .build();
             //获取处理后的新newRequest
-            Request newRequest = builder.url(newHttpUrl).build();
+            Request newRequest = null;
+            if (baseURL.host().equals("yun.ydtg.com.cn") || baseURL.host().equals("csyun-slb.yd.com.cn")) {
+                newRequest = builder.url(newHttpUrl + YDYHttpApplication.YDYToken).build();
+            }else {
+                newRequest = builder.url(newHttpUrl).build();
+            }
             return chain.proceed(newRequest);
         } else {
             return chain.proceed(originalRequest);
