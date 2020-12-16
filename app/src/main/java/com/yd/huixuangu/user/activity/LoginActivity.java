@@ -14,6 +14,8 @@ import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
 import com.yd.huixuangu.user.presenter.LoginPresenter2;
 import com.yd.huixuangu.user.presenter.LoginPresenter3;
+import com.yd.ydyun.module.EventType;
+import com.yd.ydyun.websocket.YDYWebSocketManage;
 
 
 public class LoginActivity extends BaseActivity implements ILogin<GaoguanjingmaishichangtongjiBean, ClassesBean> {
@@ -23,7 +25,7 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        YDYWebSocketManage.getInstance().listenTree(EventType.VALUE,"/zbj/zbjcc/hxgzbj/classes");
     }
 
     @Override

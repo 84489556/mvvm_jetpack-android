@@ -5,8 +5,9 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.yd.ydyun.GsonSingle;
-import com.yd.ydyun.HeartBean;
+import com.yd.ydyun.module.HeartBean;
 import com.yd.ydyun.ISocketListener;
+import com.yd.ydyun.module.WebSocketBaseResponse;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

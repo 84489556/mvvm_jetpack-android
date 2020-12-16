@@ -2,7 +2,14 @@ package com.yd.ydyun.websocket;
 
 import android.text.TextUtils;
 
+import com.google.gson.JsonObject;
+import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.ISocketListener;
+import com.yd.ydyun.module.EventType;
+import com.yd.ydyun.module.RequestModule;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -17,6 +24,7 @@ public class YDYWebSocketManage {
     private boolean isConnect = false;
     private YDYWebSocketController WSSocketController = null;
     private static YDYWebSocketManage instance = null;
+    private Set<String> eventTypeSet = new HashSet<String>();
 
 
     public static YDYWebSocketManage getInstance() {
@@ -29,6 +37,13 @@ public class YDYWebSocketManage {
 
     }
 
+    public YDYWebSocketManage() {
+        initEventTypeSet();
+    }
+
+    /**
+     * 建立webSocket连接
+     */
     public void connect(String wss, ISocketListener iSocketListener) {
         WSSocketController = new YDYWebSocketController(iSocketListener);
         if (!TextUtils.isEmpty(wss)) {
@@ -40,6 +55,45 @@ public class YDYWebSocketManage {
         webSocket = client.newWebSocket(request, WSSocketController);
     }
 
+
+    /**
+     * 监听某一个节点信息
+     */
+
+    public void listenTree(String eventType, String path) {
+        if (useSet(eventType)) {
+
+        }
+
+        RequestModule requestModule = new RequestModule("yuanda/node".concat(path));
+
+        String rmString = GsonSingle.getInstance().toJson(requestModule);
+        WebSocket socket = WSSocketController.getSocket();
+        if (socket != null) {
+            socket.send(rmString);
+        }
+
+    }
+
+
+    private void initEventTypeSet() {
+        eventTypeSet.add(EventType.VALUE);
+        eventTypeSet.add(EventType.CHILD_CHANGE);
+        eventTypeSet.add(EventType.CHILD_REMOVE);
+        eventTypeSet.add(EventType.CHILD_ADD);
+    }
+
+    private boolean useSet(String targetValue) {
+        if (eventTypeSet != null) {
+            return eventTypeSet.contains(targetValue);
+        }
+        return false;
+
+    }
+
+    /**
+     * 关闭webSocket连接
+     */
     public void close() {
 
         if (WSSocketController != null) {
@@ -53,6 +107,7 @@ public class YDYWebSocketManage {
 
         }
     }
+
 
     public void onDestroy() {
         if (null != client) {
@@ -76,7 +131,6 @@ public class YDYWebSocketManage {
     private Request.Builder getRequestBuilder() {
         return RequestBuilder.getInstance().getBuilder();
     }
-
 
 
     private String token = "";

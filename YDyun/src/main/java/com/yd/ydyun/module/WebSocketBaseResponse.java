@@ -1,4 +1,4 @@
-package com.yd.ydyun.websocket;
+package com.yd.ydyun.module;
 
 public class WebSocketBaseResponse {
     private String command;

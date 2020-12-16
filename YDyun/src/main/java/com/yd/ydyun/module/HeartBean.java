@@ -1,4 +1,4 @@
-package com.yd.ydyun;
+package com.yd.ydyun.module;
 
 public class HeartBean {
 
