@@ -22,7 +22,7 @@ public class LoginPresenter2 extends BasePresenter<ClassesBean> {
         next();
     }
 
-    private void next() {
+    public void next() {
         QueryModule queryModule = new QueryModule.Builder()
                 .api("/get")
                 .orderByKey("$key")
@@ -44,7 +44,7 @@ public class LoginPresenter2 extends BasePresenter<ClassesBean> {
 
     @Override
     public void onNextPresenter(@NonNull ClassesBean classesBean) {
-        Log.d("wgl",classesBean.getMsg());
+        Log.d("wgl---",classesBean.getMsg());
     }
 
 

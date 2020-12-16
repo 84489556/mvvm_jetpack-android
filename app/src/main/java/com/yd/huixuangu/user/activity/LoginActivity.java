@@ -10,11 +10,10 @@ import androidx.annotation.Nullable;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.user.presenter.ILogin;
-import com.yd.huixuangu.user.presenter.LoginPresenter;
 import com.yd.huixuangu.user.presenter.LoginPresenter2;
 
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogin {
+public class LoginActivity extends BaseActivity implements ILogin {
 
 
     @Override
@@ -35,10 +34,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
     }
 
     @Override
-    public LoginPresenter initPresenter() {
+    public void initPresenter() {
         LoginPresenter2 loginPresenter2 = new LoginPresenter2();
-//        return new LoginPresenter(this);
-        return null;
+//        LoginPresenter loginPresenter = new LoginPresenter(this);
     }
 
 

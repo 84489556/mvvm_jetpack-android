@@ -5,37 +5,22 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-public abstract class BaseActivity<T extends BasePresenter> extends Activity {
-    protected T p;
-
+public abstract class BaseActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        p = initPresenter();
+        initPresenter();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (p!=null){
-            p.onDestroy();
-            p = null;
-        }
 
     }
 
-
+    public abstract void initPresenter();
     public abstract void initView();
 
-    public abstract T initPresenter();
-
-    public T getPresenter() {
-        return p;
-    }
-
-    public void setPresenter(T presenter) {
-        this.p = presenter;
-    }
 }
