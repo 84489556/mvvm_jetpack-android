@@ -9,11 +9,13 @@ import androidx.annotation.Nullable;
 
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
+import com.yd.huixuangu.user.bean.ClassesBean;
+import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
 import com.yd.huixuangu.user.presenter.LoginPresenter2;
 
 
-public class LoginActivity extends BaseActivity implements ILogin {
+public class LoginActivity extends BaseActivity implements ILogin<GaoguanjingmaishichangtongjiBean, ClassesBean> {
 
 
     @Override
@@ -40,15 +42,22 @@ public class LoginActivity extends BaseActivity implements ILogin {
     }
 
 
+
     @Override
-    public void success(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    public void success(GaoguanjingmaishichangtongjiBean msg) {
+        Toast.makeText(this, msg.toString(), Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void success2(ClassesBean results) {
+
     }
 
     @Override
     public void failure(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
+
+
 
     public void shutdownWebSocket(View view) {
 
