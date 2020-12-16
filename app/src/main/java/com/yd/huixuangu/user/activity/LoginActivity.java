@@ -13,6 +13,7 @@ import com.yd.huixuangu.user.bean.ClassesBean;
 import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
 import com.yd.huixuangu.user.presenter.LoginPresenter2;
+import com.yd.huixuangu.user.presenter.LoginPresenter3;
 
 
 public class LoginActivity extends BaseActivity implements ILogin<GaoguanjingmaishichangtongjiBean, ClassesBean> {
@@ -37,8 +38,9 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
 
     @Override
     public void initPresenter() {
-        LoginPresenter2 loginPresenter2 = new LoginPresenter2();
+//        LoginPresenter2 loginPresenter2 = new LoginPresenter2();
 //        LoginPresenter loginPresenter = new LoginPresenter(this);
+        new LoginPresenter3();
     }
 
 

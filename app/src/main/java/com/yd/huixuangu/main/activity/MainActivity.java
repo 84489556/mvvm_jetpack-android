@@ -20,6 +20,11 @@ public class MainActivity extends BaseActivity implements IMain {
 
     }
 
+    @Override
+    public void initPresenter() {
+
+    }
+
     public void testButton(View view) {
         startActivity(new Intent(this, LoginActivity.class));
     }
@@ -31,10 +36,6 @@ public class MainActivity extends BaseActivity implements IMain {
     }
 
 
-    @Override
-    public MainPresenter initPresenter() {
-        return null;
-    }
 
     @Override
     public void success(String msg) {
