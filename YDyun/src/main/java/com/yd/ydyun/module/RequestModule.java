@@ -1,24 +1,26 @@
 package com.yd.ydyun.module;
 
 public class RequestModule {
-    int com = 7;
+    int cmd = 7;
     String path;
     User user;
 
-    public RequestModule( String path) {
-        this.path = path;
-        User.Group_id id = new User.Group_id();
-        id .group_id = path;
+    public RequestModule( String nodepath,String id) {
+        this.path = "yuanda/node".concat(nodepath);
 
-        User.Group_id[]  ids =   new User.Group_id[]{id};
+        User.Group_id gid = new User.Group_id();
+        gid .group_id = nodepath;
 
+        User.Group_id[]  ids =   new User.Group_id[]{gid};
         User user = new User();
         user.setGroups(ids);
+        user.setId(id);
         this.user = user;
 
     }
 
     static class User {
+        String id ;
         Group_id[] groups = new Group_id[]{};
 
         public Group_id[] getGroups() {
@@ -27,6 +29,14 @@ public class RequestModule {
 
         public void setGroups(Group_id[] groups) {
             this.groups = groups;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
         }
 
         static class Group_id{

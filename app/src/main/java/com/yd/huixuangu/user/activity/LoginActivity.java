@@ -9,12 +9,15 @@ import androidx.annotation.Nullable;
 
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
+import com.yd.huixuangu.base.HuiXuanGuApplication;
 import com.yd.huixuangu.user.bean.ClassesBean;
 import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
 import com.yd.huixuangu.user.presenter.LoginPresenter2;
 import com.yd.huixuangu.user.presenter.LoginPresenter3;
+import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.module.EventType;
+import com.yd.ydyun.module.RequestModule;
 import com.yd.ydyun.websocket.YDYWebSocketManage;
 
 
@@ -25,7 +28,10 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        YDYWebSocketManage.getInstance().listenTree(EventType.VALUE,"/zbj/zbjcc/hxgzbj/classes");
+        RequestModule requestModule = new RequestModule("/quote_provider_yun/SH000300", HuiXuanGuApplication.socketID);
+
+        String rmString = GsonSingle.getInstance().toJson(requestModule);
+        YDYWebSocketManage.getInstance().sendMsg(rmString);
     }
 
     @Override
@@ -42,7 +48,7 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
     public void initPresenter() {
 //        LoginPresenter2 loginPresenter2 = new LoginPresenter2();
 //        LoginPresenter loginPresenter = new LoginPresenter(this);
-        new LoginPresenter3();
+//        new LoginPresenter3();
     }
 
 

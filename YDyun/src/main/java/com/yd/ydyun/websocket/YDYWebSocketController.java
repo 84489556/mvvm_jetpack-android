@@ -47,7 +47,7 @@ public class YDYWebSocketController extends WebSocketListener {
         if (null != iSocketListener) {
             iSocketListener.onClosed(webSocket, code, reason);
         }
-
+        Log.d("wgl","onClosed");
     }
 
     /**
@@ -72,7 +72,8 @@ public class YDYWebSocketController extends WebSocketListener {
         if (null != iSocketListener) {
             iSocketListener.onFailure(webSocket, t, response);
         }
-        Log.e(TAG, t.getMessage());
+        Log.d("wgl","onFailure");
+
 
 
     }
@@ -87,21 +88,19 @@ public class YDYWebSocketController extends WebSocketListener {
         WebSocketBaseResponse response = GsonSingle.getInstance().fromJson(text, WebSocketBaseResponse.class);
 
         if (response == null) {
-            Log.e(TAG, "返回结果错误");
             return;
         }
 
         WebSocketBaseResponse.Data data = response.getData();
 
         if (data == null) {
-            Log.e(TAG, "返回结果错误");
             return;
         }
-        analysisEvent(data.getCode());
+        analysisEvent(data);
     }
 
-    private void analysisEvent(int code) {
-        switch (code){
+    private void analysisEvent(WebSocketBaseResponse.Data data) {
+        switch (data.getCode()){
             case 10007:
                 break;
             case 1100:
@@ -112,8 +111,6 @@ public class YDYWebSocketController extends WebSocketListener {
             case 1103:
                 break;
             default:
-                Log.d(TAG, "未知消息");
-
         }
     }
 

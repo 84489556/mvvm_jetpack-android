@@ -17,14 +17,16 @@ import okhttp3.WebSocket;
 public class HuiXuanGuApplication extends Application  {
 
     public static Context context;
-    String wss = "wss://yun.ydtg.com.cn?username=abc&password=123";
+    public  static final String wss = "wss://yun.ydtg.com.cn?username=abc&password=123";
+    public  static  String socketID = "";
 
+    //public  static final String wss = "wss://csyun-slb.yd.com.cn?username=ydcyys589&password=555688";
     @Override
     public void onCreate() {
         super.onCreate();
         OkHttp.getInstance().init(this, HostManage.getHostMap());
         context = getApplicationContext();
-        YDYWebSocketManage.getInstance().connect(wss, new WebSocketReceive());
+        YDYWebSocketManage.getInstance().connect(wss, new WebSocketReceive(wss));
 
     }
 

@@ -1,6 +1,7 @@
 package com.yd.ydyun.websocket;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.JsonObject;
 import com.yd.ydyun.GsonSingle;
@@ -53,6 +54,8 @@ public class YDYWebSocketManage {
         Request request = getRequestBuilder().url(wss).build();
         WSSocketController.setClose(false);
         webSocket = client.newWebSocket(request, WSSocketController);
+
+
     }
 
 
@@ -60,17 +63,11 @@ public class YDYWebSocketManage {
      * 监听某一个节点信息
      */
 
-    public void listenTree(String eventType, String path) {
-        if (useSet(eventType)) {
-
-        }
-
-        RequestModule requestModule = new RequestModule("yuanda/node".concat(path));
-
-        String rmString = GsonSingle.getInstance().toJson(requestModule);
+    public void sendMsg( String msg) {
         WebSocket socket = WSSocketController.getSocket();
         if (socket != null) {
-            socket.send(rmString);
+            Log.d("wgl sendMsg",msg);
+            socket.send(msg);
         }
 
     }
