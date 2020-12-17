@@ -3,11 +3,8 @@ package com.yd.ydyun.websocket;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.gson.JsonObject;
-import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.ISocketListener;
 import com.yd.ydyun.module.EventType;
-import com.yd.ydyun.module.RequestModule;
 
 import java.util.HashSet;
 import java.util.Set;

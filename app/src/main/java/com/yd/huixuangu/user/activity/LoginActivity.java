@@ -10,14 +10,12 @@ import androidx.annotation.Nullable;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.base.HuiXuanGuApplication;
+import com.yd.huixuangu.base.module.CMDConstant;
+import com.yd.huixuangu.base.module.RequestModule;
 import com.yd.huixuangu.user.bean.ClassesBean;
 import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
-import com.yd.huixuangu.user.presenter.LoginPresenter2;
-import com.yd.huixuangu.user.presenter.LoginPresenter3;
 import com.yd.ydyun.GsonSingle;
-import com.yd.ydyun.module.EventType;
-import com.yd.ydyun.module.RequestModule;
 import com.yd.ydyun.websocket.YDYWebSocketManage;
 
 
@@ -28,10 +26,7 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        RequestModule requestModule = new RequestModule("/quote_provider_yun/SH000300", HuiXuanGuApplication.socketID);
 
-        String rmString = GsonSingle.getInstance().toJson(requestModule);
-        YDYWebSocketManage.getInstance().sendMsg(rmString);
     }
 
     @Override
@@ -70,10 +65,15 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
 
 
     public void shutdownWebSocket(View view) {
-
+        RequestModule build = RequestModule.builder().cmd(CMDConstant.ON).id(HuiXuanGuApplication.socketID).path("/quote_provider_yun/SH000300").build();
+        String rmString = GsonSingle.getInstance().toJson(build);
+        YDYWebSocketManage.getInstance().sendMsg(rmString);
     }
 
     public void connect(View view) {
+        RequestModule build = RequestModule.builder().cmd(CMDConstant.ON).id(HuiXuanGuApplication.socketID).path("/quote_provider_yun/SH000300").build();
+        String rmString = GsonSingle.getInstance().toJson(build);
+        YDYWebSocketManage.getInstance().sendMsg(rmString);
     }
 
     public void isConnect(View view) {
