@@ -5,12 +5,15 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-public abstract class BaseActivity extends Activity {
+import com.yd.huixuangu.base.module.SocketModule;
+
+public abstract class BaseActivity extends Activity implements WebSocketListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
+        WebSocketReceive.setListener(this);
         initPresenter();
     }
 
@@ -21,6 +24,9 @@ public abstract class BaseActivity extends Activity {
     }
 
     public abstract void initPresenter();
+
     public abstract void initView();
 
+
+    public  void receiveSocket(SocketModule data){};
 }

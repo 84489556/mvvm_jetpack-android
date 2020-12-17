@@ -4,8 +4,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import androidx.annotation.UiThread;
-
 import com.yd.httpmudule.YDYHttpApplication;
 import com.yd.huixuangu.base.module.Data;
 import com.yd.huixuangu.base.module.SocketModule;
@@ -18,10 +16,16 @@ import okhttp3.WebSocket;
 
 public class WebSocketReceive implements ISocketListener {
     private static String TAG = "HuiXuanGuApplication";
-    public    String wss ="";
+    public String wss = "";
 
     public WebSocketReceive(String wss) {
         this.wss = wss;
+    }
+
+    private static WebSocketListener listener;
+
+    public static void setListener(WebSocketListener mListener) {
+        listener = mListener;
     }
 
     @Override
@@ -39,10 +43,12 @@ public class WebSocketReceive implements ISocketListener {
             HuiXuanGuApplication.socketID = data.getUser().getId();
         }
 
-
-
-
         Log.d(TAG.concat(":onMessage = "), test);
+        if (socketModule.getData() == null) return;
+        if (socketModule.getData().getNodePath() == null) return;
+        if (listener == null) return;
+        listener.receiveSocket(socketModule);
+
     }
 
     @Override
@@ -57,7 +63,7 @@ public class WebSocketReceive implements ISocketListener {
         mainHandler.post(new Runnable() {
             @Override
             public void run() {
-                YDYWebSocketManage.getInstance().connect(wss,WebSocketReceive.this);
+                YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
 
             }
         });

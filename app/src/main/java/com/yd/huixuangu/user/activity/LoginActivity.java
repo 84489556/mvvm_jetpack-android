@@ -1,6 +1,7 @@
 package com.yd.huixuangu.user.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.base.HuiXuanGuApplication;
 import com.yd.huixuangu.base.module.CMDConstant;
 import com.yd.huixuangu.base.module.RequestModule;
+import com.yd.huixuangu.base.module.SocketModule;
 import com.yd.huixuangu.user.bean.ClassesBean;
 import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.user.presenter.ILogin;
@@ -79,4 +81,14 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
     public void isConnect(View view) {
     }
 
+    @Override
+    public void receiveSocket(SocketModule data) {
+        if (data.getData().getNodePath().equals("/quote_provider_yun/SH000300")) {
+
+            Log.d("wgl","activity收到"+data.getData().getNodePath()+"的消息");
+
+
+        }
+
+    }
 }
