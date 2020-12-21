@@ -1,6 +1,4 @@
-package com.yd.huixuangu.user.presenter;
-
-import com.yd.huixuangu.base.BaseInterface;
+package com.yd.huixuangu.丢弃.user.presenter;
 
 public  interface ILogin <T,B>  {
      void success(T msg);

@@ -1,13 +1,7 @@
-package com.yd.huixuangu.user.presenter;
+package com.yd.huixuangu.丢弃.user.presenter;
 
-import android.util.Log;
-
-import com.yd.huixuangu.base.ApiService;
 import com.yd.huixuangu.base.BasePresenter;
-import com.yd.huixuangu.base.NodePath;
-import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
-import com.yd.ydyun.GsonSingle;
-import com.yd.ydyun.QueryModule;
+import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -15,8 +9,6 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 
 /**
  * 指定泛型，对应next方法的回调参数

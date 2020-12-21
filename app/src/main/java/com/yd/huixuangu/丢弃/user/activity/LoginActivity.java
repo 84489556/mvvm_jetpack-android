@@ -1,4 +1,4 @@
-package com.yd.huixuangu.user.activity;
+package com.yd.huixuangu.丢弃.user.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +14,9 @@ import com.yd.huixuangu.base.HuiXuanGuApplication;
 import com.yd.huixuangu.base.module.CMDConstant;
 import com.yd.huixuangu.base.module.RequestModule;
 import com.yd.huixuangu.base.module.SocketModule;
-import com.yd.huixuangu.user.bean.ClassesBean;
-import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
-import com.yd.huixuangu.user.presenter.ILogin;
+import com.yd.huixuangu.丢弃.user.bean.ClassesBean;
+import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.丢弃.user.presenter.ILogin;
 import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.websocket.YDYWebSocketManage;
 

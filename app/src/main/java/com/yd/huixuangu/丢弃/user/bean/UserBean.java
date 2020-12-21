@@ -1,8 +1,6 @@
-package com.yd.huixuangu.user.bean;
+package com.yd.huixuangu.丢弃.user.bean;
 
 import com.yd.huixuangu.base.BaseResponse;
-
-import java.util.List;
 
 public class UserBean extends BaseResponse {
 

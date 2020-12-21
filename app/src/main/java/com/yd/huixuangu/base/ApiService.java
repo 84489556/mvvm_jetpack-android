@@ -1,16 +1,12 @@
 package com.yd.huixuangu.base;
 
 
-import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
-import com.yd.huixuangu.user.bean.UserBean;
-
-import java.util.Map;
+import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.丢弃.user.bean.UserBean;
 
 import io.reactivex.rxjava3.core.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;

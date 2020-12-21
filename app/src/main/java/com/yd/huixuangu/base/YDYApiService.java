@@ -1,8 +1,8 @@
 package com.yd.huixuangu.base;
 
 
-import com.yd.huixuangu.user.bean.GaoguanjingmaishichangtongjiBean;
-import com.yd.huixuangu.user.bean.UserBean;
+import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.丢弃.user.bean.UserBean;
 
 import java.util.Map;
 

@@ -1,17 +1,16 @@
-package com.yd.huixuangu.user.presenter;
+package com.yd.huixuangu.丢弃.user.presenter;
 
 import android.util.Log;
 
 import com.yd.huixuangu.base.ApiService;
 import com.yd.huixuangu.base.BasePresenter;
 import com.yd.huixuangu.base.NodePath;
-import com.yd.huixuangu.user.bean.ClassesBean;
+import com.yd.huixuangu.丢弃.user.bean.ClassesBean;
 import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.QueryModule;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import okhttp3.MediaType;

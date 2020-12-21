@@ -13,7 +13,7 @@
         android:name=".base.HuiXuanGuApplication"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.activity.MainActivity">
+        <activity android:name=".demo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".user.activity.LoginActivity" />
+        <activity android:name=".丢弃.user.activity.LoginActivity" />
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
 rootProject.name='huixuangu-android'
 include ':app'
 include ':Http'
-include ':Video'
 include ':Market'
 include ':YDgrpc'
 include ':YDyun'

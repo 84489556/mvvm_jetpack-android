@@ -1,4 +1,4 @@
-package com.yd.huixuangu.user.bean; /**
+package com.yd.huixuangu.丢弃.user.bean; /**
  * Copyright 2020 json.cn
  */
 import java.util.Date;

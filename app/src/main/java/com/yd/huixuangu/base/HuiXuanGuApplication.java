@@ -16,7 +16,7 @@ import okhttp3.WebSocket;
 
 public class HuiXuanGuApplication extends Application  {
 
-    public static Context context;
+    public static Application context;
     public  static final String wss = "wss://yun.ydtg.com.cn?username=abc&password=123";
     public  static  String socketID = "";
 
@@ -25,7 +25,7 @@ public class HuiXuanGuApplication extends Application  {
     public void onCreate() {
         super.onCreate();
         OkHttp.getInstance().init(this, HostManage.getHostMap());
-        context = getApplicationContext();
+        context = this;
         YDYWebSocketManage.getInstance().connect(wss, new WebSocketReceive(wss));
 
     }
