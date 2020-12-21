@@ -1,20 +1,26 @@
 package com.yd.huixuangu.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
 import com.yd.huixuangu.base.module.SocketModule;
 
-public abstract class BaseActivity extends Activity implements WebSocketListener {
+public abstract class BaseActivity extends AppCompatActivity implements WebSocketListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
         WebSocketReceive.setListener(this);
-        initPresenter();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     @Override
@@ -23,10 +29,8 @@ public abstract class BaseActivity extends Activity implements WebSocketListener
 
     }
 
-    public abstract void initPresenter();
 
-    public abstract void initView();
+    public void receiveSocket(SocketModule data) {
+    }
 
-
-    public  void receiveSocket(SocketModule data){};
 }

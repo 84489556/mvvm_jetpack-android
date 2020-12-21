@@ -36,12 +36,10 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
         super.onDestroy();
     }
 
-    @Override
     public void initView() {
         TextView textView = findViewById(R.id.textview);
     }
 
-    @Override
     public void initPresenter() {
 //        LoginPresenter2 loginPresenter2 = new LoginPresenter2();
 //        LoginPresenter loginPresenter = new LoginPresenter(this);
