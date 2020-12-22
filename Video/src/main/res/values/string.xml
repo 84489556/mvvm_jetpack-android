@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="video_mobile_net">正在使用非WIFI网络，播放将产生流量费用</string>
+    <string name="video_play"> 继续播放</string>
+
+    <string name="video_no_net"> 网络错误，请检查网络设置</string>
+    <string name="video_no_play">刷新重试</string>
+    <string name="video_err">亲，加载失利了</string>
+
+
+
+    <string name="tips_not_wifi_confirm">继续播放</string>
+    <string name="no_net">当前找不到网络</string>
+    <string name="tips_not_wifi_cancel">停止播放</string>
+    <string name="no_url">播放地址无效</string>
+    <string name="jump_ad">跳过</string>
+</resources>

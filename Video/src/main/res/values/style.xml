@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="video_style_dialog_progress" parent="@android:style/Theme.Dialog">
+
+        <item name="android:windowBackground">@color/black_20</item><!--使布局背景颜色透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:layout_gravity">center</item><!--使控件居中-->
+
+        <item name="android:windowAnimationStyle">@style/video_popup_toast_anim</item>
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:windowIsTranslucent">false</item><!--true处理启动时黑屏，但导致启动app慢-->
+    </style>
+    <style name="video_style_dialog_volume" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/video_popup_toast_anim</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="video_popup_toast_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <!-- 视频播放进度条 -->
+    <style name="video_progressBar">
+        <item name="android:progressDrawable">@drawable/video_progress</item>
+        <item name="android:thumb">@mipmap/video_selector_thumb_bar</item>
+        <item name="android:max">100</item>
+        <item name="android:progress">0</item>
+    </style>
+
+    <style name="video_vertical_progressBar">
+        <item name="android:maxHeight">12dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/video_volume_progress_bg</item>
+        <item name="android:minHeight">1dp</item>
+    </style>
+    <style name="video_speed_txt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+</resources>

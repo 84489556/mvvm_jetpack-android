@@ -22,6 +22,8 @@
         </activity>
 
         <activity android:name=".丢弃.user.activity.LoginActivity" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
 
 </manifest>

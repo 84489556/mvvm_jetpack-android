@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.bokecc.sdk.mobile.live.DWLiveEngine;
 import com.yd.httpmudule.OkHttp;
 import com.yd.httpmudule.YDYHttpApplication;
 import com.yd.huixuangu.base.module.SocketModule;
@@ -28,6 +29,12 @@ public class HuiXuanGuApplication extends Application  {
         context = this;
         YDYWebSocketManage.getInstance().connect(wss, new WebSocketReceive(wss));
 
+        try {
+            //迈视播放器
+            DWLiveEngine.init(this);
+        }catch (Exception e){
+
+        }
     }
 
 }
