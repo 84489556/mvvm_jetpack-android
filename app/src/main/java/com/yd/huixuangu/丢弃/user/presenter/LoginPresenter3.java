@@ -3,7 +3,7 @@ package com.yd.huixuangu.丢弃.user.presenter;
 import android.util.Log;
 
 import com.yd.huixuangu.base.BasePresenter;
-import com.yd.huixuangu.base.NodePath;
+import com.yd.huixuangu.net.socket.NodePath;
 import com.yd.huixuangu.丢弃.user.bean.ClassesBean;
 import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.ydyun.GsonSingle;

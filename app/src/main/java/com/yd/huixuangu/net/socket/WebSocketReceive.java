@@ -1,12 +1,12 @@
-package com.yd.huixuangu.base;
+package com.yd.huixuangu.net.socket;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
 import com.yd.httpmudule.YDYHttpApplication;
-import com.yd.huixuangu.base.module.Data;
-import com.yd.huixuangu.base.module.SocketModule;
+import com.yd.huixuangu.base.HuiXuanGuApplication;
+import com.yd.huixuangu.bean.Data;
 import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.ISocketListener;
 import com.yd.ydyun.websocket.YDYWebSocketManage;

@@ -1,20 +1,17 @@
-package com.yd.huixuangu.demo;
+package com.yd.huixuangu.ui.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.databinding.ActivityMainBinding;
+import com.yd.huixuangu.viewmodel.UserViewModel;
 
 
 public class MainActivity extends BaseActivity {

@@ -1,11 +1,10 @@
 package com.yd.huixuangu.base;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
 import com.yd.httpmudule.RetrofitService;
-import com.yd.httpmudule.ServerDictionaries;
+import com.yd.huixuangu.net.http.ApiService;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;

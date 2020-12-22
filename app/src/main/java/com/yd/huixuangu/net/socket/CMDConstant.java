@@ -1,4 +1,4 @@
-package com.yd.huixuangu.base.module;
+package com.yd.huixuangu.net.socket;
 
 public class CMDConstant {
     public static final int OFF =34;

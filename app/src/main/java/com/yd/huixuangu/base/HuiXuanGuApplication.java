@@ -1,18 +1,11 @@
 package com.yd.huixuangu.base;
 
 import android.app.Application;
-import android.content.Context;
-import android.util.Log;
 
 import com.yd.httpmudule.OkHttp;
-import com.yd.httpmudule.YDYHttpApplication;
-import com.yd.huixuangu.base.module.SocketModule;
-import com.yd.ydyun.GsonSingle;
-import com.yd.ydyun.ISocketListener;
+import com.yd.huixuangu.net.http.HostManage;
+import com.yd.huixuangu.net.socket.WebSocketReceive;
 import com.yd.ydyun.websocket.YDYWebSocketManage;
-
-import okhttp3.Response;
-import okhttp3.WebSocket;
 
 public class HuiXuanGuApplication extends Application  {
 

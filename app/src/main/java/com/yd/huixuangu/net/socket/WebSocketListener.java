@@ -1,6 +1,4 @@
-package com.yd.huixuangu.base;
-
-import com.yd.huixuangu.base.module.SocketModule;
+package com.yd.huixuangu.net.socket;
 
 public interface WebSocketListener {
 

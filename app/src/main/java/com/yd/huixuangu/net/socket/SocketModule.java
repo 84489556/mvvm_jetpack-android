@@ -1,4 +1,6 @@
-package com.yd.huixuangu.base.module;
+package com.yd.huixuangu.net.socket;
+
+import com.yd.huixuangu.bean.Data;
 
 public class SocketModule {
 

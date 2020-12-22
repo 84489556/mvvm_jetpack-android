@@ -1,6 +1,7 @@
-package com.yd.huixuangu.base;
+package com.yd.huixuangu.net.http;
 
 
+import com.yd.huixuangu.net.socket.SocketURLHelp;
 import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.丢弃.user.bean.UserBean;
 
@@ -26,7 +27,7 @@ public interface  ApiService  {
     /**
      * 高管交易榜最新交易近一年高管市场统计
      */
-    @Headers("host:"+HostManage.HostKey.HXG)
+    @Headers("host:"+ HostManage.HostKey.HXG)
     @GET("/ydhxg/GaoGuanJiaoYi/gaoguanjingmaishichangtongji")
     Observable<GaoguanjingmaishichangtongjiBean> gaoguanjingmaishichangtongji();
 

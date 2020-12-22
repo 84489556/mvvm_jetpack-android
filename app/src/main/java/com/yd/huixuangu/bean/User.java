@@ -1,4 +1,4 @@
-package com.yd.huixuangu.base.module;
+package com.yd.huixuangu.bean;
 
 public class User {
     private String id;

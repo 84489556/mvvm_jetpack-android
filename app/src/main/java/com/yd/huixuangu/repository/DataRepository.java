@@ -1,12 +1,12 @@
-package com.yd.huixuangu.demo;
+package com.yd.huixuangu.repository;
 
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.yd.httpmudule.RetrofitService;
-import com.yd.huixuangu.base.ApiService;
+import com.yd.huixuangu.base.CallBack;
+import com.yd.huixuangu.net.http.ApiService;
 import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;

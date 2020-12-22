@@ -1,4 +1,4 @@
-package com.yd.huixuangu.base.module;
+package com.yd.huixuangu.net.socket;
 
 public class RequestModule {
     private int cmd = -1;

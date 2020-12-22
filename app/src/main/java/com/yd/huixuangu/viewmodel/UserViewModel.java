@@ -1,8 +1,11 @@
-package com.yd.huixuangu.demo;
+package com.yd.huixuangu.viewmodel;
 
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.yd.huixuangu.base.CallBack;
+import com.yd.huixuangu.repository.DataRepository;
 
 public class UserViewModel extends ViewModel {
 

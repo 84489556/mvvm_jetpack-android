@@ -1,4 +1,4 @@
-package com.yd.huixuangu.base;
+package com.yd.huixuangu.net.http;
 
 import com.yd.httpmudule.BuildConfig;
 

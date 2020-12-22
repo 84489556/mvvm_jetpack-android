@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 
-import com.yd.huixuangu.base.module.SocketModule;
+import com.yd.huixuangu.net.socket.SocketModule;
+import com.yd.huixuangu.net.socket.WebSocketListener;
+import com.yd.huixuangu.net.socket.WebSocketReceive;
 
 public abstract class BaseActivity extends AppCompatActivity implements WebSocketListener {
 
