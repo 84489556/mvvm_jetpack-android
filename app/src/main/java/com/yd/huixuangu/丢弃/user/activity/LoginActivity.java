@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
+import com.yd.huixuangu.base.DataBindingConfig;
 import com.yd.huixuangu.base.HuiXuanGuApplication;
 import com.yd.huixuangu.net.socket.CMDConstant;
 import com.yd.huixuangu.net.socket.RequestModule;
@@ -29,6 +30,16 @@ public class LoginActivity extends BaseActivity implements ILogin<Gaoguanjingmai
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+    }
+
+    @Override
+    protected void initViewModel() {
+
+    }
+
+    @Override
+    protected DataBindingConfig getDataBindingConfig() {
+        return null;
     }
 
     @Override

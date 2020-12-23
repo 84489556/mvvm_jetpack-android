@@ -6,9 +6,11 @@
     <data>
 
         <variable
-            name="user"
-            type="com.yd.huixuangu.viewmodel.UserViewModel" />
-
+            name="mainModel"
+            type="com.yd.huixuangu.viewmodel.MainViewModel" />
+        <variable
+            name="event"
+            type="com.yd.huixuangu.ui.activity.MainActivity.EventHandler" />
     </data>
 
     <LinearLayout
@@ -20,14 +22,14 @@
             android:id="@+id/textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.data}" />
+            android:text="@{mainModel.data}" />
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="test"
-            android:onClick="button"
+            android:onClick="@{()->event.button()}"
             />
     </LinearLayout>
 </layout>

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.yd.huixuangu.base.CallBack;
 import com.yd.huixuangu.repository.DataRepository;
 
-public class UserViewModel extends ViewModel {
+public class MainViewModel extends ViewModel {
 
     private MutableLiveData<String> data;
     public MutableLiveData<String> getData() {
