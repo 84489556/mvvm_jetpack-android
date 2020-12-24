@@ -1,9 +1,11 @@
 package com.yd.huixuangu.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
@@ -35,9 +37,14 @@ public class MainActivity extends BaseActivity {
     }
 
 
+
     public  class EventHandler  {
         public void button() {
             mModel.getRemoteData();
+        }
+        public void gotopage(){
+
+
         }
     }
 

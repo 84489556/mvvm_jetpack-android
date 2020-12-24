@@ -20,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.TestActivity"/>
 
         <activity android:name=".丢弃.user.activity.LoginActivity" />
 

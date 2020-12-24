@@ -8,6 +8,7 @@
         <variable
             name="mainModel"
             type="com.yd.huixuangu.viewmodel.MainViewModel" />
+
         <variable
             name="event"
             type="com.yd.huixuangu.ui.activity.MainActivity.EventHandler" />
@@ -16,6 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.activity.MainActivity">
 
         <TextView
@@ -28,8 +30,17 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="test"
             android:onClick="@{()->event.button()}"
-            />
+            android:text="test" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
     </LinearLayout>
+
+
 </layout>
