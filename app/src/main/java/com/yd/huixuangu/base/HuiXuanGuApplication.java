@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 
+import com.bokecc.sdk.mobile.live.DWLiveEngine;
 import com.yd.httpmudule.OkHttp;
 import com.yd.huixuangu.net.http.HostManage;
 import com.yd.huixuangu.net.socket.WebSocketReceive;
@@ -25,6 +26,13 @@ public class HuiXuanGuApplication extends Application implements ViewModelStoreO
         OkHttp.getInstance().init(this, HostManage.getHostMap());
         context = this;
         YDYWebSocketManage.getInstance().connect(wss, new WebSocketReceive(wss));
+
+        try {
+            //迈视播放器
+            DWLiveEngine.init(this);
+        }catch (Exception e){
+
+        }
         mAppViewModelStore = new ViewModelStore();
     }
 

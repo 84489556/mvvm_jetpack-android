@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252525">
+
+    <com.bokecc.livemodule.view.ResizeTextureView
+        android:layout_centerInParent="true"
+        android:id="@+id/live_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_video_no_play_tip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3B3C43"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/video_progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="#99FFFFFF"
+        android:indeterminateTintMode="src_atop" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="    "/>
+        <LinearLayout
+            android:id="@+id/video_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:visibility="invisible"
+            android:background="@mipmap/video_tuceng_up">
+            <ImageView
+                android:id="@+id/video_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:src="@mipmap/back_white"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/video_bottom_lay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            android:orientation="horizontal"
+            android:background="@mipmap/zzx_jianbianzhezhao"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/fullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/fullscreen" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/live_beijing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/zhibojianbeijing"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
