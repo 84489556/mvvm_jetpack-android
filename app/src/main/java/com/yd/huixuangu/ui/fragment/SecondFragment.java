@@ -1,7 +1,11 @@
 package com.yd.huixuangu.ui.fragment;
 
+import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 import androidx.navigation.Navigation;
 
 import com.yd.huixuangu.BR;
@@ -23,6 +27,14 @@ public class SecondFragment extends BaseFragment {
     @Override
     protected void initViewModel() {
         mState = getFragmentScopeViewModel(SecondFragmentViewModel.class);
+        MainViewModel activityScopeViewModel = getActivityScopeViewModel(MainViewModel.class);
+        activityScopeViewModel.getData().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Log.d("wgl",activityScopeViewModel+"");//这里可以拿到此fragment的所属activity的viewmodel。通过打印地址可以知道是同一个实例。不会重新建一个，在activity里setValue里会收到回调
+
+            }
+        });
     }
 
     public class SecondFragmentCallBack {
@@ -31,6 +43,11 @@ public class SecondFragment extends BaseFragment {
         }
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Override
     public void onDestroy() {

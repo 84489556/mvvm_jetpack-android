@@ -2,6 +2,7 @@ package com.yd.huixuangu.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
@@ -27,6 +28,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initViewModel() {
         mModel = getActivityScopeViewModel(MainViewModel.class);
+        Log.d("wgl activity ",mModel+"");
+
 
     }
 

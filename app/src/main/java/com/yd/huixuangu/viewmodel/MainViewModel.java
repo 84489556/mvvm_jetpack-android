@@ -18,19 +18,20 @@ public class MainViewModel extends ViewModel {
         return data;
     }
     public void getRemoteData(){
-        DataRepository userRepository = new DataRepository();
-        userRepository.getGGJMSCTJ(new CallBack<String>() {
-            @Override
-            public String onNext(String s) {
-                data.postValue(s);
-                return null;
-            }
-
-            @Override
-            public String onError() {
-                return null;
-            }
-        });
+        data.setValue("set");
+//        DataRepository userRepository = new DataRepository();
+//        userRepository.getGGJMSCTJ(new CallBack<String>() {
+//            @Override
+//            public String onNext(String s) {
+//                data.postValue(s);
+//                return null;
+//            }
+//
+//            @Override
+//            public String onError() {
+//                return null;
+//            }
+//        });
     }
 
 
