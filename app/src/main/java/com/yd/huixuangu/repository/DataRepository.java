@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.yd.httpmudule.RetrofitService;
 import com.yd.huixuangu.base.CallBack;
 import com.yd.huixuangu.net.http.ApiService;
-import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;

@@ -30,5 +30,12 @@
             android:onClick="@{()->callback.openSecondFragment()}"
             />
 
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多个网络请求"
+            android:onClick="@{()->callback.moreHttpRequest()}"
+            />
     </LinearLayout>
 </layout>

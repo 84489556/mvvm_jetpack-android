@@ -13,11 +13,11 @@ import com.yd.huixuangu.viewmodel.MainFragmentViewModel;
 import com.yd.huixuangu.viewmodel.MainViewModel;
 
 public class MainFragment extends BaseFragment {
-    private MainFragmentViewModel mState;
+    private MainFragmentViewModel mViewModel;
 
     @Override
     protected DataBindingConfig getDataBindingConfig() {
-        DataBindingConfig bindingConfig = new DataBindingConfig(R.layout.fragment_main, BR.mainFragmentModel, mState);
+        DataBindingConfig bindingConfig = new DataBindingConfig(R.layout.fragment_main, BR.mainFragmentModel, mViewModel);
         bindingConfig.addBindingParam(BR.callback, new MainFragmentCallBack());
         return bindingConfig;
     }
@@ -25,7 +25,7 @@ public class MainFragment extends BaseFragment {
     @Override
     protected void initViewModel() {
 
-        mState = getFragmentScopeViewModel(MainFragmentViewModel.class);
+        mViewModel = getFragmentScopeViewModel(MainFragmentViewModel.class);
     }
 
     @Override
@@ -40,6 +40,14 @@ public class MainFragment extends BaseFragment {
             Bundle bundle = new Bundle();
             bundle.putString("key", "来自mainfragment的数据");
             nav().navigate(R.id.secondFragment, bundle);
+        }
+
+
+
+
+        public void  moreHttpRequest(){
+
+            mViewModel.sendRequest();
         }
     }
 }

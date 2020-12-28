@@ -1,7 +1,7 @@
 package com.yd.huixuangu.丢弃.user.presenter;
 
 import com.yd.huixuangu.base.BasePresenter;
-import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;

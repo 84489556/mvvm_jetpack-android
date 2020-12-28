@@ -5,7 +5,7 @@ import android.util.Log;
 import com.yd.huixuangu.base.BasePresenter;
 import com.yd.huixuangu.net.socket.NodePath;
 import com.yd.huixuangu.丢弃.user.bean.ClassesBean;
-import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.QueryModule;
 

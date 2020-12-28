@@ -16,7 +16,7 @@ import com.yd.huixuangu.net.socket.CMDConstant;
 import com.yd.huixuangu.net.socket.RequestModule;
 import com.yd.huixuangu.net.socket.SocketModule;
 import com.yd.huixuangu.丢弃.user.bean.ClassesBean;
-import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
 import com.yd.huixuangu.丢弃.user.presenter.ILogin;
 import com.yd.ydyun.GsonSingle;
 import com.yd.ydyun.websocket.YDYWebSocketManage;

@@ -2,8 +2,7 @@ package com.yd.huixuangu.net.http;
 
 
 import com.yd.huixuangu.net.socket.SocketURLHelp;
-import com.yd.huixuangu.丢弃.user.bean.GaoguanjingmaishichangtongjiBean;
-import com.yd.huixuangu.丢弃.user.bean.UserBean;
+import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
 
 import io.reactivex.rxjava3.core.Observable;
 import okhttp3.RequestBody;
@@ -15,14 +14,7 @@ import retrofit2.http.POST;
 public interface  ApiService  {
 
 
-    /**
-     * 例子：
-     * host:main  指定host
-     * system/login 接口名称
-     */
-    @Headers("host:main")
-    @POST("system/login")
-    Observable<UserBean> systemLogin(@Body String userId, @Body String password);
+
 
     /**
      * 高管交易榜最新交易近一年高管市场统计
@@ -30,6 +22,22 @@ public interface  ApiService  {
     @Headers("host:"+ HostManage.HostKey.HXG)
     @GET("/ydhxg/GaoGuanJiaoYi/gaoguanjingmaishichangtongji")
     Observable<GaoguanjingmaishichangtongjiBean> gaoguanjingmaishichangtongji();
+
+
+
+
+    /**
+     * 高管交易榜最新交易近一年高管市场统计
+     */
+    @Headers("host:"+ HostManage.HostKey.HXG)
+    @GET("/ydhxg/GaoGuanJiaoYi/gaoguanjingmaishichangtongji")
+    Observable<Object> ggjmsctj();
+    /**
+     * 最新交易
+     */
+    @Headers("host:"+ HostManage.HostKey.HXG)
+    @GET("/ydhxg/GaoGuanJiaoYi/zuixinjiaoyi?pageNum=1&pageSize=10&indus=&desc=true")
+    Observable<Object> zuixinjiaoyi();
 
 
     //    @FormUrlEncoded
