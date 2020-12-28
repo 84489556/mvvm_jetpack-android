@@ -32,6 +32,8 @@ public class MainFragmentRepository extends BaseRepository {
      *
      * 中间某个请求error后，不会再收到后续回调
      *
+     * 等待当前可观察到的终止后才转移到下一个
+     *
      */
     public void request() {
         Observable.concat(ggjy,zuixinjiaoyi)
@@ -65,7 +67,7 @@ public class MainFragmentRepository extends BaseRepository {
 
 
     /**
-     * merge 有序
+     * merge  不等待当前可观察到的终止后才转移到下一个
      *
      * merge（）最多4个 / mergeArray（）可超过4个
      */
