@@ -31,7 +31,7 @@ public class SecondFragment extends BaseFragment {
         activityScopeViewModel.getData().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Log.d("wgl",activityScopeViewModel+"");//这里可以拿到此fragment的所属activity的viewmodel。通过打印地址可以知道是同一个实例。不会重新建一个，在activity里setValue里会收到回调
+                Log.d("wgl", activityScopeViewModel + "");//这里可以拿到此fragment的所属activity的viewmodel。通过打印地址可以知道是同一个实例。不会重新建一个，在activity里setValue里会收到回调
 
             }
         });
@@ -47,11 +47,16 @@ public class SecondFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getArguments() == null) return;
+        String keyStr = getArguments().getString("key");
+        Log.d("wgl keyStr", keyStr);
+
+
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Toast.makeText(getContext(),"第二个fragment销毁了",Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "第二个fragment销毁了", Toast.LENGTH_LONG).show();
     }
 }

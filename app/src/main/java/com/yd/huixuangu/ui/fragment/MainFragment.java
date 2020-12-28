@@ -35,14 +35,11 @@ public class MainFragment extends BaseFragment {
 
     public class MainFragmentCallBack {
 
-        public void openSecondFragment(){
+        public void openSecondFragment() {
 
-//            int amount = Integer.parseInt("传递数据");
-//            ConfirmationAction action =
-//                    SpecifyAmountFragmentDirections.confirmationAction();
-//            action.setAmount(amount)
-
-        nav().navigate(R.id.secondFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("key", "来自mainfragment的数据");
+            nav().navigate(R.id.secondFragment, bundle);
         }
     }
 }
