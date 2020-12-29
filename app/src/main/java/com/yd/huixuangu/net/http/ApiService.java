@@ -36,7 +36,7 @@ public interface  ApiService  {
      * 最新交易
      */
     @Headers("host:"+ HostManage.HostKey.HXG)
-    @GET("/ydhxg/GaoGuanJiaoYi/zuixinjiaoyi?pageNum=1&pageSize=10&indus=&desc=true")
+    @GET("/ydhxg/GaoGuanJiaoYi/zuixinjiaoyi?pageNum=1&pageSize=2&indus=&desc=true")
     Observable<Object> zuixinjiaoyi();
 
 

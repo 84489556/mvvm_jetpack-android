@@ -39,7 +39,7 @@ public class MainFragmentViewModel extends ViewModel {
 
     public void sendRequest() {
         MainFragmentRepository repository = new MainFragmentRepository();
-        repository.request1();
+        repository.request2();
 
 
     }
