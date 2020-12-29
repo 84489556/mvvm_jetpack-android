@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.base.DataBindingConfig;
 import com.yd.huixuangu.viewmodel.MainViewModel;
+import com.yuanda.usercenter.ui.activity.LoginActivity;
 
 
 public class MainActivity extends BaseActivity {
@@ -48,6 +47,10 @@ public class MainActivity extends BaseActivity {
         public void gotopage(){
 
 
+        }
+        public void gotoLoginpage(){
+            Intent i = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(i);
         }
     }
 

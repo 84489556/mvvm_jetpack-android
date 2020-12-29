@@ -32,7 +32,11 @@
             android:layout_height="wrap_content"
             android:onClick="@{()->event.button()}"
             android:text="test" />
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->event.gotoLoginpage()}"
+            android:text="Login" />
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"

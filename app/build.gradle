@@ -51,7 +51,7 @@ dependencies {
     implementation project(path: ':YDyun')
     implementation project(path: ':Market')
     implementation project(path: ':Video')
-
+    implementation project(path: ':UserCenter')
 
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
