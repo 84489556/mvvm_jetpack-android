@@ -20,8 +20,8 @@ public class MainFragmentRepository extends BaseRepository {
     Observable<Object> zuixinjiaoyi;
 
     public MainFragmentRepository() {
-        ggjy = api.ggjmsctj();
-        zuixinjiaoyi = api.zuixinjiaoyi();
+        ggjy = api.ggjmsctj().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        zuixinjiaoyi = api.zuixinjiaoyi().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
 
 
     }
@@ -40,8 +40,6 @@ public class MainFragmentRepository extends BaseRepository {
      */
     public void request() {
         Observable.concat(ggjy, zuixinjiaoyi)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Object>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -74,8 +72,6 @@ public class MainFragmentRepository extends BaseRepository {
      */
     public void request1() {
         Observable.mergeArray(zuixinjiaoyi, ggjy, ggjy, ggjy, ggjy, ggjy, ggjy, ggjy, ggjy, ggjy, zuixinjiaoyi)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Object>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
@@ -100,6 +96,17 @@ public class MainFragmentRepository extends BaseRepository {
     }
 
 
+    /**
+     * zip可以把两次请求"结果"合并到一起
+     * 其中一个失败，就会走onError
+     *
+     * BiFunction
+     * T - 函数的第一个参数的类型
+     * U - 函数的第二个参数的类型
+     * R - 函数结果的类型
+     *
+     */
+
     public void request2() {
         Observable.zip(ggjy, zuixinjiaoyi, new BiFunction<Object, Object, Object>() {
             @Override
@@ -109,7 +116,7 @@ public class MainFragmentRepository extends BaseRepository {
                 return o2.toString().concat("---------"+o.toString());
             }
 
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Object>() {
+        }).subscribe(new Observer<Object>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
 
@@ -123,7 +130,7 @@ public class MainFragmentRepository extends BaseRepository {
 
             @Override
             public void onError(@NonNull Throwable e) {
-
+                Log.d("wgl o onError ", e.toString());
             }
 
             @Override
