@@ -16,26 +16,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@color/colorPrimary">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="main fragment" />
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="main fragment" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打开一个fragment"
+                android:onClick="@{()->callback.openSecondFragment()}"
+                />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多个网络请求"
+                android:onClick="@{()->callback.moreHttpRequest()}"
+                />
+        </LinearLayout>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打开一个fragment"
-            android:onClick="@{()->callback.openSecondFragment()}"
+
+            android:onClick="@{()->callback.toVideo()}"
+            android:text="视频"
             />
 
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="多个网络请求"
-            android:onClick="@{()->callback.moreHttpRequest()}"
-            />
     </LinearLayout>
 </layout>

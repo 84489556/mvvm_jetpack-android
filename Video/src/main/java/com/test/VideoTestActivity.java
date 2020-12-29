@@ -58,9 +58,9 @@ public class VideoTestActivity extends AppCompatActivity {
         this.widthPx = outMetrics.widthPixels;
         this.heightPx = outMetrics.heightPixels;
 
-//        initVideo(dKurl);
-        initReplayVideo();
-//        String style = "light-content";
+        initVideo(dKurl);
+//        initReplayVideo();
+        String style = "light-content";
 //        setStatusStyle(style);
     }
 
@@ -112,6 +112,26 @@ public class VideoTestActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        FLog.e(TAG,"onRestart");
+        videoRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        FLog.e(TAG,"onResume");
+
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        FLog.e(TAG,"onPause");
+        videoPause();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
 //        if (neVideoView != null){
@@ -126,6 +146,10 @@ public class VideoTestActivity extends AppCompatActivity {
     }
 
     private void initReplayVideo() {
+        videoCcReplay.setVisibility(View.VISIBLE);
+        videoCcVideo.setVisibility(View.GONE);
+        videoCcVideo.pause();
+
         ((RadioButton)rg.getChildAt(3)).setChecked(true);
         ViewGroup.LayoutParams params = videoCcReplay.getLayoutParams();
         params.height = (widthPx * 9) / 16;
@@ -138,9 +162,16 @@ public class VideoTestActivity extends AppCompatActivity {
         info.setLiveId("5A23AEED7A100C83");
 
         videoCcReplay.setParam(info);
+        temp = "5A23AEED7A100C83";
+        videoCcReplay.doLiveLogin();
 //        videoCc.doLiveLogin();
     }
     private void initVideo(String url) {
+        videoCcReplay.setVisibility(View.GONE);
+        videoCcReplay.pause();
+
+        videoCcVideo.setVisibility(View.VISIBLE);
+
         ((RadioButton)rg.getChildAt(0)).setChecked(true);
         ViewGroup.LayoutParams params = videoCcVideo.getLayoutParams();
         params.height = (widthPx * 9) / 16;
@@ -154,7 +185,25 @@ public class VideoTestActivity extends AppCompatActivity {
     }
     private void switchUrl(String url, boolean isAudio){
         this.temp = url;
+        if (videoCcVideo.getVisibility() == View.GONE){
+            videoCcVideo.setVisibility(View.VISIBLE);
+        }
+
         videoCcVideo.switchUrl(url,isAudio);
+    }
+    private void videoRestart(){
+        if (videoCcVideo.getVisibility() == View.VISIBLE){
+            videoCcVideo.resume();
+        }else {
+            videoCcReplay.resume();
+        }
+    }
+    private void videoPause(){
+        if (videoCcVideo.getVisibility() == View.VISIBLE){
+            videoCcVideo.pause();
+        }else {
+            videoCcReplay.pause();
+        }
     }
 
     public void clickView(View clickView) {
@@ -181,7 +230,7 @@ public class VideoTestActivity extends AppCompatActivity {
                 if (TextUtils.equals("5A23AEED7A100C83", temp)){
                     return;
                 }
-                temp = "5A23AEED7A100C83";
+                initReplayVideo();
                 // http://ydzb.maxtv.cn/api/view/callback?roomid=70F26B2B620664C59C33DC5901307461&userid=AE903AFD89036D43&liveid=3A437C4A20911511&recordid=5A23AEED7A100C83
 //                switchUrl("5A23AEED7A100C83","AE903AFD89036D43","");
             }

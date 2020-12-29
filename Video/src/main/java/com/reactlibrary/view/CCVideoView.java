@@ -130,7 +130,9 @@ public class CCVideoView extends VideoBaseView   {
         }
     }
     public void stop(){
-
+        if (player != null){
+            player.stop();
+        }
     }
     public void seekTo(int position){
         if (player != null){

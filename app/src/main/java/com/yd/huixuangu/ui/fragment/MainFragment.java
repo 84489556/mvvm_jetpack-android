@@ -1,10 +1,12 @@
 package com.yd.huixuangu.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.test.VideoTestActivity;
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseFragment;
@@ -48,6 +50,11 @@ public class MainFragment extends BaseFragment {
         public void  moreHttpRequest(){
 
             mViewModel.sendRequest();
+        }
+        public void toVideo(){
+            assert getActivity() == null;
+            Intent intent = new Intent(getContext(),VideoTestActivity.class);
+            getActivity().startActivity(intent);
         }
     }
 }

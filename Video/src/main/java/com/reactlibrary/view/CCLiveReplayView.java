@@ -229,6 +229,26 @@ public  class CCLiveReplayView extends VideoBaseView implements DWReplayRoomList
     /**
      * 开始播放
      */
+    public void resume() {
+        if (player == null){
+            return;
+        }
+        if (player.isPlaying()) {
+            return;
+        }
+        Log.e(TAG," resume" );
+        if (player.isPlayable()){
+            //如果是准备完成状态，重新启动下
+            player.resume();
+
+            mHandler.sendMessage(mHandler.obtainMessage(MSG.MSG_ON_RESUME, 0));
+            mHandler.sendEmptyMessageDelayed(MSG.VIEW_CLOSE_LOADING,100);
+        }
+
+    }
+    /**
+     * 开始播放
+     */
     public void start() {
 
         if (player == null){
