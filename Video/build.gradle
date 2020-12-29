@@ -30,4 +30,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     api 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    //获得场景视频SDK，必须引入
+    implementation 'com.bokecc:vod:3.4.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

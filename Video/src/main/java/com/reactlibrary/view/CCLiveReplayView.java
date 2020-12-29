@@ -32,8 +32,8 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 /**
  * CC 回放视频展示控件
  */
-public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListener {
-    private static final String TAG = "CCVideoLayout";
+public  class CCLiveReplayView extends VideoBaseView implements DWReplayRoomListener {
+    private static final String TAG = CCLiveReplayView.class.getSimpleName();
     private Context mContext;
     private TextureView mTextureView;
     private ProgressBar mVideoProgressBar;
@@ -48,7 +48,7 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
     public DWReplayPlayer getPlayer() {
         return player;
     }
-    public CCVideoLayout(Context context) {
+    public CCLiveReplayView(Context context) {
         super(context);
         this.mContext = context;
 
@@ -56,7 +56,7 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
         initPlayer();
     }
 
-    public CCVideoLayout(Context context, AttributeSet attrs) {
+    public CCLiveReplayView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
 
@@ -64,7 +64,7 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
         initPlayer();
     }
 
-    public CCVideoLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CCLiveReplayView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
 
@@ -145,7 +145,7 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
         @Override
         public void iStart() {
             if (player != null && player.isPlayable()){
-                CCVideoLayout.this.start();
+                CCLiveReplayView.this.start();
             }else {
                 stop();
                 doLiveLogin();
@@ -158,7 +158,7 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
 
         @Override
         public void iPause() {
-            CCVideoLayout.this.pause();
+            CCLiveReplayView.this.pause();
 //            dispatchEvent("seedPauseState", null);
             if (videoPlayCallBack != null) {
                 videoPlayCallBack.pause();
@@ -206,12 +206,12 @@ public  class CCVideoLayout extends VideoBaseView implements DWReplayRoomListene
 
         @Override
         public void iSeekTo(int pos) {
-            CCVideoLayout.this.seekTo(pos);
+            CCLiveReplayView.this.seekTo(pos);
         }
 
         @Override
         public void iSpeed(float s) {
-            CCVideoLayout.this.setSpeed(s);
+            CCLiveReplayView.this.setSpeed(s);
         }
 
         @Override

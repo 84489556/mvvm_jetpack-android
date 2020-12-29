@@ -40,11 +40,13 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.netease.neliveplayer.playerkit.sdk.constant.CauseCode;
 import com.reactlibrary.utils.AnimationUtil;
 import com.reactlibrary.utils.CommonUtil;
+import com.reactlibrary.utils.FLog;
 import com.reactlibrary.utils.ImageLoaders;
 import com.yd.video.R;
+
+import java.util.Locale;
 
 public abstract class VideoBaseView extends RelativeLayout implements View.OnTouchListener,SeekBar.OnSeekBarChangeListener{
     private static final String TAG = VideoBaseView.class.getSimpleName();
@@ -299,18 +301,21 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
         super(context, attrs);
         this.mContext = context;
         initViews();
+        initS();
     }
 
     public VideoBaseView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
         initViews();
+        initS();
     }
 
     public VideoBaseView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         this.mContext = context;
         initViews();
+        initS();
     }
 
     protected void initS(){
@@ -541,13 +546,10 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
                         break;
                     }
                     errorReply++;
-                    int code = msg.obj instanceof Integer ? (int)msg.obj : 0;
-                    if (code == CauseCode.CODE_HTTP_CONNECT_ERROR ||code == CauseCode.CODE_BUFFERING_ERROR ||
-                            code == CauseCode.NELP_EN_PREPARE_TIMEOUT_ERROR){
-                        if (iVideoCommonControl != null){
-                            iVideoCommonControl.iStart();
-                        }
+                    if (iVideoCommonControl != null){
+                        iVideoCommonControl.iStart();
                     }
+
                     break;
                 case MSG.MSG_ON_HID:
                     bottomLay.setVisibility(View.INVISIBLE);
@@ -851,19 +853,19 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
                 mVideoSpeedLay.setVisibility(VISIBLE);
                 updateSpeedView(false);
             } else if (vId == mVideoSpeed20.getId()){
-                setSpeed(2);
+                updateSpeed(2);
                 updateSpeedView(true);
             } else if (vId == mVideoSpeed15.getId()){
-                setSpeed(1.5f);
+                updateSpeed(1.5f);
                 updateSpeedView(true);
             } else if (vId == mVideoSpeed125.getId()){
-                setSpeed(1.25f);
+                updateSpeed(1.25f);
                 updateSpeedView(true);
             } else if (vId == mVideoSpeed10.getId()){
-                setSpeed(1);
+                updateSpeed(1);
                 updateSpeedView(true);
             } else if (vId == mVideoSpeed05.getId()){
-                setSpeed(0.5f);
+                updateSpeed(0.5f);
                 updateSpeedView(true);
             }
         }
@@ -902,7 +904,7 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
             mVideoSpeed.setText(String.format("%sX", "" + mSpeed));
         }
     }
-    private void setSpeed(float mSpeed){
+    private void updateSpeed(float mSpeed){
         this.mSpeed = mSpeed;
         if (iVideoCommonControl != null){
             iVideoCommonControl.iSpeed(mSpeed);
@@ -1138,14 +1140,19 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
     }
     protected void touchSurfaceMoveFullLogic(float absDeltaX, float absDeltaY) {
         int curWidth = 0;
+
         if (getActivityContext() != null) {
-            curWidth = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mScreenHeight : mScreenWidth;
+            if (mViewHeight < 1){
+                mViewWidth = getWidth();
+                mViewHeight = getHeight();
+            }
+            curWidth = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mViewHeight : mViewWidth;
         }
         if (absDeltaX > mThreshold || absDeltaY > mThreshold) {
             cancelProgressTimer();
             if (absDeltaX >= mThreshold) {
                 //防止全屏虚拟按键
-                int screenWidth = CommonUtil.getScreenWidth(getContext());
+                int screenWidth = getWidth();
                 if (Math.abs(screenWidth - mDownX) > mSeekEndOffset) {
                     mChangePosition = true;
                     mDownPosition = getCurrentPositionWhenPlaying();
@@ -1153,7 +1160,8 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
                     mShowVKey = true;
                 }
             } else {
-                int screenHeight = CommonUtil.getScreenHeight(getContext());
+
+                int screenHeight = getHeight();
                 boolean noEnd = Math.abs(screenHeight - mDownY) > mSeekEndOffset;
                 if (mFirstTouch) {
                     mBrightness = (mDownX < curWidth * 0.5f) && noEnd;
@@ -1197,22 +1205,24 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
                 mViewWidth = getWidth();
                 mViewHeight = getHeight();
             }
-            curWidth = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mScreenHeight : mScreenWidth;
-            curHeight = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mScreenWidth : mViewHeight;
+            curWidth = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mViewHeight : mViewWidth;
+            curHeight = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mViewWidth : mViewHeight;
+//            FLog.e(TAG, " curWidth:" + curWidth);
         }
         if (mChangePosition) {
             int totalTimeDuration = videoDuration;
             mSeekTimePosition = (int) (mDownPosition + (deltaX * totalTimeDuration / curWidth) / mSeekRatio);
             if (mSeekTimePosition > totalTimeDuration)
                 mSeekTimePosition = totalTimeDuration;
-
+            FLog.e(TAG, String.format(Locale.CHINA,"deltaX:%f  curWidth:%d mSeekTimePosition:%d ",deltaX,curWidth,mSeekTimePosition));
             showProgressDialog(deltaX,mSeekTimePosition,  totalTimeDuration);
         } else if (mChangeVolume) {
             deltaY = -deltaY;
             int max = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-            int deltaV = (int) (max * deltaY * 3 / curHeight);
+            int deltaV = (int) (max * deltaY  / curHeight);
             mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mGestureDownVolume + deltaV, 0);
-            int volumePercent = (int) (mGestureDownVolume * 100 / max + deltaY * 3 * 100 / curHeight);
+            int volumePercent = (int) (mGestureDownVolume * 100 / max + deltaY  * 100 / curHeight);
+            FLog.e(TAG,"max:" + max + " deltaV:" + deltaV +" volumePercent:"+ volumePercent);
 
             showVolumeDialog(-deltaY, volumePercent);
         } else if (mBrightness) {
@@ -1407,10 +1417,11 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
         String totalTime = CommonUtil.stringForTime(totalTimeDuration);
         if (mDialogSeekTime != null) {
             mDialogSeekTime.setText(seekTime);
+//            Log.e(TAG,seekTime+" seekTimePosition:" +seekTimePosition);
         }
         if (mDialogTotalTime != null) {
             mDialogTotalTime.setText(" / " + totalTime);
-            Log.e(TAG,"totalTime:" +totalTime);
+//            Log.e(TAG,seekTime+" totalTime:" +totalTime);
         }
         if (totalTimeDuration > 0)
             if (mDialogProgressBar != null) {
@@ -1428,7 +1439,7 @@ public abstract class VideoBaseView extends RelativeLayout implements View.OnTou
         if (videoQuickProLay.getVisibility() ==  INVISIBLE ){
             videoQuickProLay.setVisibility(VISIBLE);
         }
-        Log.e(TAG,"videoQuickProLay[1]:" +totalTime);
+//        Log.e(TAG,"videoQuickProLay[1]:" +totalTime);
 }
     protected void dismissProgressDialog() {
 //        if (mProgressDialog != null) {

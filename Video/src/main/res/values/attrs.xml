@@ -16,5 +16,9 @@
         <attr name="download_bg_line_width" format="integer" />
         <attr name="download_text_size" format="integer" />
     </declare-styleable>
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
 
 </resources>

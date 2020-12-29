@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
+    <style name="AndroidMainTheme" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/black</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+    </style>
     <style name="video_style_dialog_progress" parent="@android:style/Theme.Dialog">
 
         <item name="android:windowBackground">@color/black_20</item><!--使布局背景颜色透明-->
@@ -51,6 +55,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="butStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/radio_bg</item>
 
+    </style>
 
 </resources>
