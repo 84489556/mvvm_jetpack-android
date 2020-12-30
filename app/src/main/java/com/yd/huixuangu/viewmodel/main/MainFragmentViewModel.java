@@ -1,4 +1,4 @@
-package com.yd.huixuangu.viewmodel;
+package com.yd.huixuangu.viewmodel.main;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

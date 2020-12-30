@@ -3,14 +3,20 @@
 
     <data>
 
+
         <variable
-            name="test"
-            type="com.yd.huixuangu.viewmodel.MainActivityViewModel" />
+            name="xuangu"
+            type="com.yd.huixuangu.viewmodel.xuangu.XuanGuFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="279dp"
+            android:layout_height="377dp"
+            android:text="选股" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

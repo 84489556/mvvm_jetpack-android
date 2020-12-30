@@ -2,19 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/mainFragment"
+    app:startDestination="@id/homeFragment"
     android:id="@+id/nav_graph">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.yd.huixuangu.ui.fragment.MainFragment"
-        android:label="main"
-        tools:layout="@layout/fragment_main"
-        >
-        <action
-            android:id="@+id/action_mainFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
-    </fragment>
+        android:id="@+id/homeFragment"
+        android:name="com.yd.huixuangu.ui.fragment.main.HomeFragment"
+        android:label="second"
+        tools:layout="@layout/fragment_second"/>
+
+
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.yd.huixuangu.ui.fragment.SecondFragment"

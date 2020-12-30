@@ -1,6 +1,7 @@
 package com.yd.ydyun.websocket;
 
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -19,7 +20,7 @@ import okio.ByteString;
 
 public class YDYWebSocketController extends WebSocketListener {
     private WebSocket mSocket;
-    private Handler mHandler = new Handler();
+    private Handler mHandler = new Handler(Looper.getMainLooper());
     private static final long HEART_BEAT_RATE = 2 * 1000;
     private boolean isClose = false;
     private boolean isConnect = false;

@@ -12,7 +12,7 @@ import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
-import com.yd.huixuangu.viewmodel.MainViewModel;
+import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 import com.yd.huixuangu.viewmodel.SecondFragmentViewModel;
 
 public class SecondFragment extends BaseFragment {
@@ -27,7 +27,7 @@ public class SecondFragment extends BaseFragment {
     @Override
     protected void initViewModel() {
         mState = getFragmentScopeViewModel(SecondFragmentViewModel.class);
-        MainViewModel activityScopeViewModel = getActivityScopeViewModel(MainViewModel.class);
+        MainActivityViewModel activityScopeViewModel = getActivityScopeViewModel(MainActivityViewModel.class);
         activityScopeViewModel.getData().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {

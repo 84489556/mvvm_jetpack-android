@@ -4,13 +4,13 @@ import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.base.DataBindingConfig;
-import com.yd.huixuangu.viewmodel.MainViewModel;
+import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 
 public class TestActivity extends BaseActivity {
-    private MainViewModel mModel;
+    private MainActivityViewModel mModel;
     @Override
     protected void initViewModel() {
-        mModel = getActivityScopeViewModel(MainViewModel.class);
+        mModel = getActivityScopeViewModel(MainActivityViewModel.class);
     }
 
     @Override

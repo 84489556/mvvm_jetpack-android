@@ -22,7 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
 
     private ViewModelProvider mActivityProvider;
     private ViewModelProvider mApplicationProvider;
-    private ViewDataBinding mBinding;
+    protected ViewDataBinding mBinding;
 
 
     /**

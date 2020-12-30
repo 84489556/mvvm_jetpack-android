@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="mainFragmentModel"
-            type="com.yd.huixuangu.viewmodel.MainFragmentViewModel" />
+            type="com.yd.huixuangu.viewmodel.main.MainFragmentViewModel" />
 
         <variable
             name="callback"
-            type="com.yd.huixuangu.ui.fragment.MainFragment.MainFragmentCallBack" />
+            type="com.yd.huixuangu.ui.fragment.main.MainFragment.MainFragmentCallBack" />
     </data>
 
     <LinearLayout
@@ -18,37 +19,47 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorPrimary">
-        <LinearLayout
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            >-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="main fragment" />-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="打开一个fragment"-->
+<!--                android:onClick="@{()->callback.openSecondFragment()}"-->
+<!--                />-->
+
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="多个网络请求"-->
+<!--                android:onClick="@{()->callback.moreHttpRequest()}"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:onClick="@{()->callback.toVideo()}"-->
+<!--            android:text="视频"-->
+<!--            />-->
+
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="main fragment" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="打开一个fragment"
-                android:onClick="@{()->callback.openSecondFragment()}"
-                />
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="多个网络请求"
-                android:onClick="@{()->callback.moreHttpRequest()}"
-                />
-        </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:onClick="@{()->callback.toVideo()}"
-            android:text="视频"
-            />
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
 
     </LinearLayout>
 </layout>

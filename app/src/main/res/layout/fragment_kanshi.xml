@@ -4,13 +4,17 @@
     <data>
 
         <variable
-            name="test"
-            type="com.yd.huixuangu.viewmodel.MainActivityViewModel" />
+            name="kanshi"
+            type="com.yd.huixuangu.viewmodel.kanshi.KanShiFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:layout_width="279dp"
+            android:layout_height="377dp"
+            android:text="看势" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
