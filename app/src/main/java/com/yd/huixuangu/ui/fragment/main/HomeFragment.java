@@ -1,9 +1,11 @@
 package com.yd.huixuangu.ui.fragment.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import com.test.VideoTestActivity;
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseFragment;
@@ -32,10 +34,24 @@ public class HomeFragment extends BaseFragment {
 
     public class HomeFragmentCallBack {
 
+        public void openSecondFragment() {
 
-      public void   openSecondFragment(){
+            Bundle bundle = new Bundle();
+            bundle.putString("key", "来自mainfragment的数据");
+            nav().navigate(R.id.secondFragment, bundle);
+        }
 
-          nav().navigate(R.id.secondFragment);
+
+
+
+        public void  moreHttpRequest(){
+
+            mViewModel.sendRequest();
+        }
+        public void toVideo(){
+            assert getActivity() == null;
+            Intent intent = new Intent(getContext(), VideoTestActivity.class);
+            getActivity().startActivity(intent);
         }
 
 

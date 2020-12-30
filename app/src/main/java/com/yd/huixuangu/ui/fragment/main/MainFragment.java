@@ -45,24 +45,6 @@ public class MainFragment extends BaseFragment {
 
     public class MainFragmentCallBack {
 
-        public void openSecondFragment() {
 
-            Bundle bundle = new Bundle();
-            bundle.putString("key", "来自mainfragment的数据");
-            nav().navigate(R.id.secondFragment, bundle);
-        }
-
-
-
-
-        public void  moreHttpRequest(){
-
-            mViewModel.sendRequest();
-        }
-        public void toVideo(){
-            assert getActivity() == null;
-            Intent intent = new Intent(getContext(),VideoTestActivity.class);
-            getActivity().startActivity(intent);
-        }
     }
 }
