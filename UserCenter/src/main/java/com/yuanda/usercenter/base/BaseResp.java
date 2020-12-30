@@ -1,5 +1,7 @@
 package com.yuanda.usercenter.base;
 
+import androidx.annotation.NonNull;
+
 public class BaseResp {
     private String msg;
     private boolean state;
@@ -26,5 +28,15 @@ public class BaseResp {
 
     public void setCode(int code) {
         this.code = code;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("msg:").append(msg).append(",");
+        sb.append("state: ").append(state).append(",");
+        sb.append("code: ").append(code);
+        return sb.toString();
     }
 }
