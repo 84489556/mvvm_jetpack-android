@@ -52,6 +52,7 @@ dependencies {
     implementation project(path: ':Market')
     implementation project(path: ':Video')
     implementation project(path: ':UserCenter')
+    implementation project(path: ':Framwork')
 
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
@@ -66,5 +67,4 @@ dependencies {
 
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.google.android.material:material:1.2.1'
-    implementation project(path: ':Framwork')
 }
