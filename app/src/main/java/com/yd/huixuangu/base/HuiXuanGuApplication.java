@@ -1,6 +1,8 @@
 package com.yd.huixuangu.base;
 
 import android.app.Application;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelStore;
@@ -18,6 +20,7 @@ public class HuiXuanGuApplication extends Application implements ViewModelStoreO
     public static final String wss = "wss://yun.ydtg.com.cn?username=abc&password=123";
     public static String socketID = "";
     private ViewModelStore mAppViewModelStore;
+    public  static Handler ApplicationHandler = new Handler(Looper.getMainLooper());
 
     //public  static final String wss = "wss://csyun-slb.yd.com.cn?username=ydcyys589&password=555688";
     @Override

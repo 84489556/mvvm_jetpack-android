@@ -17,8 +17,6 @@ import okhttp3.WebSocket;
 public class WebSocketReceive implements ISocketListener {
     private static String TAG = "HuiXuanGuApplication";
     public  static String wss = "";
-    Handler mainHandler;
-    ReConnectRunnable runnable = null;
 
     int anInt =0;
     public WebSocketReceive(String wss) {
@@ -62,43 +60,12 @@ public class WebSocketReceive implements ISocketListener {
 
     @Override
     public void onFailure(WebSocket webSocket, Throwable t, Response response) {
-
-//        if (mainHandler == null){
-//            mainHandler = new Handler(Looper.getMainLooper());
-//        }
-//
-//
-//        if (runnable == null){
-//            runnable = new ReConnectRunnable();
-//
-//        }
-//        mainHandler.post(runnable);
-//        mainHandler.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
-//                ++anInt;
-//                Log.d("wgl" ,anInt+"");
-//
-//            }
-//        });
-
-//        YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
+        HuiXuanGuApplication.ApplicationHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
+            }
+        },1800);
     }
 
-
-    class ReConnectRunnable implements Runnable {
-        public ReConnectRunnable() {
-            ++anInt;
-            Log.d("wgl" ,anInt+"");
-            YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
-        }
-
-        @Override
-        public void run() {
-            Log.d("wgl" ,anInt+"run");
-            YDYWebSocketManage.getInstance().connect(wss, WebSocketReceive.this);
-
-        }
-    }
 }
