@@ -35,4 +35,5 @@ dependencies {
     implementation 'com.bokecc:vod:3.4.0'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':Framwork')
 }

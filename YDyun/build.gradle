@@ -39,5 +39,6 @@ dependencies {
     api 'io.reactivex.rxjava3:rxandroid:3.0.0'
     api "io.reactivex.rxjava3:rxjava:3.0.7"
     implementation project(path: ':Http')
+    implementation project(path: ':Framwork')
 
 }
