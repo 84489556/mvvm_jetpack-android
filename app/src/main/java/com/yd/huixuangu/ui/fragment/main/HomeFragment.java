@@ -38,7 +38,7 @@ public class HomeFragment extends BaseFragment {
 
             Bundle bundle = new Bundle();
             bundle.putString("key", "来自mainfragment的数据");
-            nav().navigate(R.id.secondFragment, bundle);
+            nav().navigate(R.id.action_homeFragment_to_secondFragment,bundle);
         }
 
 
