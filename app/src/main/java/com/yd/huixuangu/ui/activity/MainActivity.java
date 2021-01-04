@@ -3,6 +3,9 @@ package com.yd.huixuangu.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +27,10 @@ import com.yd.huixuangu.ui.fragment.xuangu.XuanGuFragment;
 import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 import com.yuanda.usercenter.ui.activity.LoginActivity;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 
 public class MainActivity extends BaseActivity implements TabLayoutMediator.TabConfigurationStrategy {
@@ -63,7 +69,8 @@ public class MainActivity extends BaseActivity implements TabLayoutMediator.TabC
 
 
         }
-        public void gotoLoginpage(){
+
+        public void gotoLoginpage() {
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(i);
         }
@@ -94,12 +101,58 @@ public class MainActivity extends BaseActivity implements TabLayoutMediator.TabC
         mBinding.mainViewPager2.setAdapter(new MainFragmentStateAdapter(this, fragments));
         tabLayoutMediator = new TabLayoutMediator(mBinding.mainTabLayout, mBinding.mainViewPager2, this);
         tabLayoutMediator.attach();
+        mBinding.mainViewPager2.setUserInputEnabled(false);
+        mBinding.mainViewPager2.setCurrentItem(2, false);
+        mBinding.mainTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
     }
 
     @Override
     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-        tab.setText(tabStrList.get(position));
+        View inflate = getLayoutInflater().inflate(R.layout.view_main_tab, null, true);
+        initTab(inflate, position);
+        tab.setCustomView(inflate);
+    }
+
+    private void initTab(View v, int p) {
+
+        ImageView iconView = v.findViewById(R.id.main_tab_icon);
+        TextView textView = v.findViewById(R.id.main_tab_text);
+        textView.setText(tabStrList.get(p));
+
+        switch (p) {
+            case 0:
+                iconView.setImageResource(R.mipmap.kanshi_unselect);
+                break;
+            case 1:
+                iconView.setImageResource(R.mipmap.guandian_unselect);
+                break;
+            case 2:
+                iconView.setImageResource(R.mipmap.main_select);
+                break;
+            case 3:
+                iconView.setImageResource(R.mipmap.dabang_unselect);
+                break;
+            case 4:
+                iconView.setImageResource(R.mipmap.xuangu_unselect);
+                break;
+        }
 
     }
 
