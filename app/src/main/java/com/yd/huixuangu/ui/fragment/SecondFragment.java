@@ -45,17 +45,6 @@ public class SecondFragment extends BaseFragment {
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().findViewById(R.id.main_tab_layout).setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getActivity().findViewById(R.id.main_tab_layout).setVisibility(View.INVISIBLE);
-    }
-    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
