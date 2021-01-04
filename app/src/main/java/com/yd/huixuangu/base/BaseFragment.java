@@ -23,10 +23,10 @@ import androidx.navigation.fragment.NavHostFragment;
 public abstract class BaseFragment extends Fragment {
 
     protected AppCompatActivity mActivity;
-    private ViewDataBinding mBinding;
-    private ViewModelProvider mFragmentProvider;
-    private ViewModelProvider mActivityProvider;
-    private ViewModelProvider mApplicationProvider;
+    protected ViewDataBinding mBinding;
+    protected ViewModelProvider mFragmentProvider;
+    protected ViewModelProvider mActivityProvider;
+    protected ViewModelProvider mApplicationProvider;
 
 
     //tip 1: DataBinding 严格模式（详见 DataBindingFragment - - - - - ）：

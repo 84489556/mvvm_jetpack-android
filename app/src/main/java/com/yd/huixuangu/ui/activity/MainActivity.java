@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements TabLayoutMediator.TabC
 
         fragments.add(KanShiFragment.getInstance());
         fragments.add(GanDianFragment.getInstance());
-        fragments.add(new MainFragment());
+        fragments.add(MainFragment.getInstance());
         fragments.add(DaBangFragment.getInstance());
         fragments.add(XuanGuFragment.getInstance());
 
