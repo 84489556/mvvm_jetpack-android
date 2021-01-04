@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment"
+    app:startDestination="@id/mainFragment"
     android:id="@+id/nav_graph">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.yd.huixuangu.ui.fragment.main.HomeFragment"
+        android:id="@+id/mainFragment"
+        android:name="com.yd.huixuangu.ui.fragment.main.MainFragment"
         android:label="second"
         tools:layout="@layout/fragment_second">
 
