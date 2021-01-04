@@ -2,17 +2,22 @@ package com.yd.huixuangu.base;
 
 import android.app.Activity;
 import android.app.Application;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.SparseArray;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.yd.huixuangu.R;
 import com.yd.huixuangu.net.socket.SocketModule;
 import com.yd.huixuangu.net.socket.WebSocketListener;
 import com.yd.huixuangu.net.socket.WebSocketReceive;
@@ -37,6 +42,12 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
         WebSocketReceive.setListener(this);
         initViewModel();
         initBinding();
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.theme));
+        }
 
     }
 
