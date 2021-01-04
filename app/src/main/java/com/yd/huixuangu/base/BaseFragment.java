@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -96,9 +97,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initViewModel();
     }
+
 
     @Nullable
     @Override
@@ -130,4 +131,11 @@ public abstract class BaseFragment extends Fragment {
     protected abstract DataBindingConfig getDataBindingConfig();
 
     protected abstract void initViewModel();
+
+    protected void setStatusColor(int color) {
+        BaseActivity activity = (BaseActivity) getActivity();
+        if (activity == null) return;
+        activity.setStatusColor(color);
+
+    }
 }

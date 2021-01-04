@@ -58,7 +58,7 @@ public class MainFragment extends BaseFragment implements TabLayoutMediator.TabC
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setStatusColor(R.color.color_0099FF);
     }
 
 
