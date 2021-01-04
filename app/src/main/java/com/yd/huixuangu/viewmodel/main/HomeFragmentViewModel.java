@@ -3,7 +3,7 @@ package com.yd.huixuangu.viewmodel.main;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.yd.huixuangu.repository.MainFragmentRepository;
+import com.yd.huixuangu.repository.main.MainFragmentRepository;
 
 public class HomeFragmentViewModel extends ViewModel {
     private MutableLiveData<String> one;
