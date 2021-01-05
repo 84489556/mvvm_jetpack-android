@@ -1,6 +1,5 @@
 package com.yd.huixuangu.ui.fragment.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,13 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.test.VideoTestActivity;
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.adapter.MainFragmentStateAdapter;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
-import com.yd.huixuangu.databinding.ActivityMainBinding;
 import com.yd.huixuangu.databinding.FragmentMainBinding;
 import com.yd.huixuangu.ui.fragment.dabang.DaBangFragment;
 import com.yd.huixuangu.ui.fragment.guandian.GanDianFragment;
@@ -98,6 +95,7 @@ public class MainFragment extends BaseFragment implements TabLayoutMediator.TabC
                 //选择时触发
                 View customView = tab.getCustomView();
                 if (customView == null) return;
+                mBinding.mainViewPager2.setCurrentItem((int)customView.getTag(), false);
                 ImageView iconView = customView.findViewById(R.id.main_tab_icon);
                 TextView textView = customView.findViewById(R.id.main_tab_text);
                 int tag = (int) customView.getTag();
