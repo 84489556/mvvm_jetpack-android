@@ -55,17 +55,17 @@ public class MainFragment extends BaseFragment implements TabLayoutMediator.TabC
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusColor(R.color.color_0099FF);
+        setStatusColor(R.color.theme);
     }
 
 
     @Override
     public void onResume() {
         super.onResume();
-        initView();
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
         tabStrList = new ArrayList<>();
         FragmentMainBinding mBinding = (FragmentMainBinding) this.mBinding;
         ArrayList<Fragment> fragments = new ArrayList<>();
@@ -78,7 +78,7 @@ public class MainFragment extends BaseFragment implements TabLayoutMediator.TabC
 
         fragments.add(KanShiFragment.getInstance());
         fragments.add(GanDianFragment.getInstance());
-        fragments.add(new HomeFragment());
+        fragments.add(HomeFragment.getInstance());
         fragments.add(DaBangFragment.getInstance());
         fragments.add(XuanGuFragment.getInstance());
 

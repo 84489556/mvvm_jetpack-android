@@ -113,9 +113,13 @@ public abstract class BaseFragment extends Fragment {
             binding.setVariable(bindingParams.keyAt(i), bindingParams.valueAt(i));
         }
         mBinding = binding;
+        initView();
         return mBinding.getRoot();
     }
 
+    protected  void initView(){
+
+    };
 
     @Override
     public void onDestroy() {
