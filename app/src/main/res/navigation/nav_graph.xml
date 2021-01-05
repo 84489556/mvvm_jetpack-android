@@ -18,6 +18,10 @@
             app:popExitAnim="@anim/fragment_pop_exit"
             android:id="@+id/action_homeFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_longHuBangFragment"
+            app:destination="@id/longHuBangFragment"
+            />
     </fragment>
 
 
@@ -26,5 +30,11 @@
         android:name="com.yd.huixuangu.ui.fragment.SecondFragment"
         android:label="second"
         tools:layout="@layout/fragment_second"
+        />
+    <fragment
+        android:id="@+id/longHuBangFragment"
+        android:name="com.yd.huixuangu.ui.fragment.dabang.LongHuBangFragment"
+        android:label="longHuBangFragment"
+        tools:layout="@layout/fragment_long_hu_bang"
         />
 </navigation>

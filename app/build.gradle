@@ -53,6 +53,7 @@ dependencies {
     implementation project(path: ':Video')
     implementation project(path: ':UserCenter')
     implementation project(path: ':Framwork')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
@@ -67,4 +68,7 @@ dependencies {
 
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.google.android.material:material:1.2.1'
+
+    //ECharts java
+//    implementation 'com.github.abel533:ECharts:3.0.0.6'
 }
