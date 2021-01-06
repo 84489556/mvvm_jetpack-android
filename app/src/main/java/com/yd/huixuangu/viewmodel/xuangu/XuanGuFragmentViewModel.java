@@ -2,5 +2,7 @@ package com.yd.huixuangu.viewmodel.xuangu;
 
 import androidx.lifecycle.ViewModel;
 
-public class XuanGuFragmentViewModel extends ViewModel {
+import com.yd.huixuangu.base.BaseViewModel;
+
+public class XuanGuFragmentViewModel extends BaseViewModel {
 }

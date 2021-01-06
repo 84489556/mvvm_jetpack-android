@@ -2,5 +2,7 @@ package com.yd.huixuangu.viewmodel.kanshi;
 
 import androidx.lifecycle.ViewModel;
 
-public class KanShiFragmentViewModel extends ViewModel {
+import com.yd.huixuangu.base.BaseViewModel;
+
+public class KanShiFragmentViewModel extends BaseViewModel {
 }

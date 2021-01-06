@@ -1,6 +1,7 @@
 package com.yd.huixuangu.ui.fragment.main;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,8 @@ import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
 import com.yd.huixuangu.databinding.FragmentHomeBinding;
 import com.yd.huixuangu.databinding.FragmentMainBinding;
+import com.yd.huixuangu.utils.BarUtils;
+import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 import com.yd.huixuangu.viewmodel.main.HomeFragmentViewModel;
 
 public class HomeFragment extends BaseFragment {
@@ -57,6 +61,12 @@ public class HomeFragment extends BaseFragment {
         gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mBinding.recyclerView.setLayoutManager(gridLayoutManager);
         mBinding.recyclerView.setAdapter(new HomeRecyclerViewAdapter(getContext()));
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
     }
 
     public class HomeFragmentCallBack {

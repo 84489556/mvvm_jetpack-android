@@ -19,9 +19,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@{home.STATUS_BAR_HEIGHT}"
+            android:background="@color/theme">
+
+        </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+
     </LinearLayout>
+
 </layout>

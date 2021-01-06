@@ -4,7 +4,9 @@ package com.yd.huixuangu.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MainActivityViewModel extends ViewModel {
+import com.yd.huixuangu.base.BaseViewModel;
+
+public class MainActivityViewModel extends BaseViewModel {
 
     private MutableLiveData<String> data;
     public MutableLiveData<String> getData() {

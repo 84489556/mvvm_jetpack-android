@@ -4,5 +4,7 @@ import android.view.View;
 
 import androidx.lifecycle.ViewModel;
 
-public class SecondFragmentViewModel extends ViewModel {
+import com.yd.huixuangu.base.BaseViewModel;
+
+public class SecondFragmentViewModel extends BaseViewModel {
 }

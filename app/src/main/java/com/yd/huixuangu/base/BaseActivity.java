@@ -44,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
      */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        BarUtils.setStatusBarColor(this, Color.TRANSPARENT);//透明状态栏
         super.onCreate(savedInstanceState);
         WebSocketReceive.setListener(this);
         initViewModel();
