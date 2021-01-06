@@ -51,7 +51,7 @@ dependencies {
     implementation project(path: ':YDyun')
     implementation project(path: ':Market')
     implementation project(path: ':Video')
-    implementation project(path: ':UserCenter')
+    //implementation project(path: ':UserCenter')
     implementation project(path: ':Framwork')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 

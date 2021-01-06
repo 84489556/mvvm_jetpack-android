@@ -13,7 +13,6 @@
             name="event"
             type="com.yd.huixuangu.ui.activity.MainActivity.EventHandler" />
     </data>
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"

@@ -16,13 +16,15 @@ import com.yd.ydyun.websocket.YDYWebSocketManage;
 
 public class HuiXuanGuApplication extends Application implements ViewModelStoreOwner {
 
-    public static Application context;
+    public static HuiXuanGuApplication context;
     public static final String wss = "wss://yun.ydtg.com.cn?username=abc&password=123";
     public static String socketID = "";
     private ViewModelStore mAppViewModelStore;
     public  static Handler ApplicationHandler = new Handler(Looper.getMainLooper());
 
     //public  static final String wss = "wss://csyun-slb.yd.com.cn?username=ydcyys589&password=555688";
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,5 +45,9 @@ public class HuiXuanGuApplication extends Application implements ViewModelStoreO
     @Override
     public ViewModelStore getViewModelStore() {
         return mAppViewModelStore;
+    }
+
+    public static HuiXuanGuApplication getInstance() {
+        return context;
     }
 }
