@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -18,10 +20,13 @@ import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.yd.huixuangu.R;
 import com.yd.huixuangu.net.socket.SocketModule;
 import com.yd.huixuangu.net.socket.WebSocketListener;
 import com.yd.huixuangu.net.socket.WebSocketReceive;
 import com.yd.huixuangu.utils.BarUtils;
+
+import static com.reactlibrary.utils.CommonUtil.getStatusBarHeight;
 
 public abstract class BaseActivity extends AppCompatActivity implements WebSocketListener {
 
@@ -32,15 +37,13 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
 
 
     /**
-     *    initViewModel();
-     *    initBinding();
-     *
-     *    顺序不能乱
+     * initViewModel();
+     * initBinding();
+     * <p>
+     * 顺序不能乱
      */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        BarUtils.setStatusBarColor(this, Color.TRANSPARENT);//控制控制栏
-        BarUtils.setStatusBarLightMode(this, true);//控制控制栏
         super.onCreate(savedInstanceState);
         WebSocketReceive.setListener(this);
         initViewModel();
@@ -132,8 +135,6 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
     }
 
 
-
-
     /**
      * 工具
      */
@@ -155,11 +156,4 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
     }
 
 
-    protected  void setStatusColor(int color){
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(ContextCompat.getColor(this, color));
-        }
-    }
 }

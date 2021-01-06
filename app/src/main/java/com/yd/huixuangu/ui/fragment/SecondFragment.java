@@ -48,7 +48,6 @@ public class SecondFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setStatusColor(R.color.color_btn_normal);
         if (getArguments() == null) return;
         String keyStr = getArguments().getString("key");
         Log.d("wgl keyStr", keyStr);

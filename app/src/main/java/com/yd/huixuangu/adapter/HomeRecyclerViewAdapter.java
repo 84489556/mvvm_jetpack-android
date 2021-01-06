@@ -30,6 +30,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<
         mDataList = new ArrayList<>();
         mDataList.add("1111");
         mDataList.add("22222");
+        mDataList.add("1111");
+        mDataList.add("22222");
+        mDataList.add("1111");
+        mDataList.add("22222");
+
         mInflater = LayoutInflater.from(context);
     }
 
@@ -55,7 +60,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<
                 view = mInflater.inflate(R.layout.item_home_recyclerview_viewpoint, parent, false);
                 break;
             default:
-                return null;
+                view = mInflater.inflate(R.layout.item_home_recyclerview_viewpoint, parent, false);
         }
         return new HomeRVVH(view);
     }
@@ -65,36 +70,20 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<
 
     }
 
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-        if (layoutManager instanceof GridLayoutManager) {
-            final GridLayoutManager gridManager = ((GridLayoutManager) layoutManager);
-            gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                @Override
-                public int getSpanSize(int position) {
-                    int type = getItemViewType(position);
-                    switch (type) {
-                        case TYPE_ITEM_ENTRANCE:
-                        case TYPE_ITEM_MARKET:
-                        case TYPE_ITEM_UPSDOWNS:
-                        case TYPE_ITEM_FOCUSHOT:
-                        case TYPE_ITEM_VIEWPOINT:
-                    }
-                    return 1;
-                }
-            });
-        }
-
-
-    }
 
 
     @Override
     public int getItemViewType(int position) {
+        switch (position){
+            case TYPE_ITEM_ENTRANCE:
+            case TYPE_ITEM_MARKET:
+            case TYPE_ITEM_UPSDOWNS:
+            case TYPE_ITEM_FOCUSHOT:
+            case TYPE_ITEM_VIEWPOINT:
+                return position;
+        }
+        return TYPE_ITEM_ENTRANCE;
 
-        return 1;
     }
 
     @Override

@@ -136,10 +136,4 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initViewModel();
 
-    protected void setStatusColor(int color) {
-        BaseActivity activity = (BaseActivity) getActivity();
-        if (activity == null) return;
-        activity.setStatusColor(color);
-
-    }
 }

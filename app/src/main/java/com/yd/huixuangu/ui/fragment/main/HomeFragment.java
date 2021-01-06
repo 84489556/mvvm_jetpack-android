@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.VideoTestActivity;
 import com.yd.huixuangu.BR;
@@ -40,7 +42,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initViewModel() {
-
         mViewModel = getFragmentScopeViewModel(HomeFragmentViewModel.class);
     }
 
@@ -52,7 +53,8 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void initView() {
         FragmentHomeBinding mBinding = (FragmentHomeBinding) this.mBinding;
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4, GridLayoutManager.VERTICAL, false);
+        LinearLayoutManager gridLayoutManager = new LinearLayoutManager(getContext());
+        gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mBinding.recyclerView.setLayoutManager(gridLayoutManager);
         mBinding.recyclerView.setAdapter(new HomeRecyclerViewAdapter(getContext()));
     }
