@@ -51,7 +51,7 @@ dependencies {
     implementation project(path: ':YDyun')
     implementation project(path: ':Market')
     implementation project(path: ':Video')
-    implementation project(path: ':UserCenter')
+    //implementation project(path: ':UserCenter')
     implementation project(path: ':Framwork')
 
     def lifecycle_version = "2.2.0"
