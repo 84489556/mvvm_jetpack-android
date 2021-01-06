@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
-import com.yd.huixuangu.adapter.MainFragmentStateAdapter;
+import com.yd.huixuangu.adapter.main.MainFragmentStateAdapter;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
 import com.yd.huixuangu.databinding.FragmentMainBinding;

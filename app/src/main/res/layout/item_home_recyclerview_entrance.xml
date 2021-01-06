@@ -10,9 +10,28 @@
             type="com.yd.huixuangu.viewmodel.main.ItemHomeRecyclerViewEntrance" />
     </data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_item_entrance_rv"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/colorPrimary" />
+        android:layout_height="65dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="9dp"
+        android:background="@color/red"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/main_select" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon"
+            android:layout_centerHorizontal="true"
+            android:text="456456"
+            android:textSize="11sp" />
+    </RelativeLayout>
 </layout>

@@ -1,15 +1,9 @@
 package com.yd.huixuangu.ui.fragment.main;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,14 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.test.VideoTestActivity;
 import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
-import com.yd.huixuangu.adapter.HomeRecyclerViewAdapter;
+import com.yd.huixuangu.adapter.main.EntranceRecyclerViewAdapter;
+import com.yd.huixuangu.adapter.main.ImageAdapter;
+import com.yd.huixuangu.adapter.main.ZhiShuRecyclerViewAdapter;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
+import com.yd.huixuangu.bean.main.ItemMainBannerBean;
 import com.yd.huixuangu.databinding.FragmentHomeBinding;
-import com.yd.huixuangu.databinding.FragmentMainBinding;
-import com.yd.huixuangu.utils.BarUtils;
-import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 import com.yd.huixuangu.viewmodel.main.HomeFragmentViewModel;
+import com.youth.banner.adapter.BannerImageAdapter;
+import com.youth.banner.holder.BannerImageHolder;
+import com.youth.banner.indicator.CircleIndicator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends BaseFragment {
     private HomeFragmentViewModel mViewModel;
@@ -54,13 +54,31 @@ public class HomeFragment extends BaseFragment {
         super.onResume();
     }
 
+
+    List<Integer> bannerData;
+
     @Override
     public void initView() {
         FragmentHomeBinding mBinding = (FragmentHomeBinding) this.mBinding;
-        LinearLayoutManager gridLayoutManager = new LinearLayoutManager(getContext());
-        gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mBinding.recyclerView.setLayoutManager(gridLayoutManager);
-        mBinding.recyclerView.setAdapter(new HomeRecyclerViewAdapter(getContext()));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 5);
+        mBinding.entranceRecyclerView.setLayoutManager(gridLayoutManager);
+        mBinding.entranceRecyclerView.setAdapter(new EntranceRecyclerViewAdapter(getContext()));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        mBinding.zhishuRecyclerView.setLayoutManager(linearLayoutManager);
+        mBinding.zhishuRecyclerView.setAdapter(new ZhiShuRecyclerViewAdapter());
+
+
+        bannerData = new ArrayList<>();
+        bannerData.add(R.mipmap.guandian_header);
+        bannerData.add(R.mipmap.guandian_header);
+        bannerData.add(R.mipmap.guandian_header);
+        bannerData.add(R.mipmap.guandian_header);
+
+        mBinding.mainBanner.setAdapter(new ImageAdapter(bannerData));
+
+
     }
 
     @Override

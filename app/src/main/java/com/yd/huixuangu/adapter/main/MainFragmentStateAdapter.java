@@ -1,4 +1,4 @@
-package com.yd.huixuangu.adapter;
+package com.yd.huixuangu.adapter.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

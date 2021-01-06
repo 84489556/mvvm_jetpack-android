@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.yd.huixuangu.viewmodel.main.ItemHomeRecyclerViewZhiShu" />
+
+    </data>
+
+
+    <TextView
+        android:layout_width="116dp"
+        android:layout_height="91dp"
+        android:layout_marginLeft="3dp"
+        android:background="@color/colorAccent"
+        android:text="123456"></TextView>
+</layout>
