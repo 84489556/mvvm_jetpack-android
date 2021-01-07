@@ -7,7 +7,7 @@
 
         <variable
             name="entrance"
-            type="com.yd.huixuangu.viewmodel.main.ItemHomeRecyclerViewEntrance" />
+            type="com.yd.huixuangu.viewmodel.main.ItemHomeEntranceViewModel" />
     </data>
 
     <RelativeLayout
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icon"
             android:layout_centerHorizontal="true"
-            android:text="456456"
+            android:text="@{entrance.title}"
             android:textSize="11sp" />
     </RelativeLayout>
 </layout>

@@ -16,12 +16,9 @@ import com.yd.huixuangu.adapter.main.ImageAdapter;
 import com.yd.huixuangu.adapter.main.ZhiShuRecyclerViewAdapter;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
-import com.yd.huixuangu.bean.main.ItemMainBannerBean;
 import com.yd.huixuangu.databinding.FragmentHomeBinding;
 import com.yd.huixuangu.viewmodel.main.HomeFragmentViewModel;
-import com.youth.banner.adapter.BannerImageAdapter;
-import com.youth.banner.holder.BannerImageHolder;
-import com.youth.banner.indicator.CircleIndicator;
+import com.yd.huixuangu.viewmodel.main.ItemHomeEntranceViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +26,7 @@ import java.util.List;
 public class HomeFragment extends BaseFragment {
     private HomeFragmentViewModel mViewModel;
     private static HomeFragment homeFragment;
+    FragmentHomeBinding homeBinding;
 
     public static HomeFragment getInstance() {
         if (homeFragment == null) {
@@ -55,29 +53,50 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    List<Integer> bannerData;
-
     @Override
     public void initView() {
-        FragmentHomeBinding mBinding = (FragmentHomeBinding) this.mBinding;
+        homeBinding = (FragmentHomeBinding) this.mBinding;
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 5);
-        mBinding.entranceRecyclerView.setLayoutManager(gridLayoutManager);
-        mBinding.entranceRecyclerView.setAdapter(new EntranceRecyclerViewAdapter(getContext()));
+        homeBinding.entranceRecyclerView.setLayoutManager(gridLayoutManager);
+        homeBinding.entranceRecyclerView.setAdapter(new EntranceRecyclerViewAdapter());
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
-        mBinding.zhishuRecyclerView.setLayoutManager(linearLayoutManager);
-        mBinding.zhishuRecyclerView.setAdapter(new ZhiShuRecyclerViewAdapter());
+        homeBinding.zhishuRecyclerView.setLayoutManager(linearLayoutManager);
+        homeBinding.zhishuRecyclerView.setAdapter(new ZhiShuRecyclerViewAdapter());
 
 
-        bannerData = new ArrayList<>();
+        List<Integer> bannerData = new ArrayList<>();
         bannerData.add(R.mipmap.guandian_header);
         bannerData.add(R.mipmap.guandian_header);
         bannerData.add(R.mipmap.guandian_header);
         bannerData.add(R.mipmap.guandian_header);
 
-        mBinding.mainBanner.setAdapter(new ImageAdapter(bannerData));
+        homeBinding.mainBanner.setAdapter(new ImageAdapter(bannerData));
+        setEntranceData();
 
+
+    }
+
+    private void setEntranceData() {
+        EntranceRecyclerViewAdapter adapter = (EntranceRecyclerViewAdapter) homeBinding.entranceRecyclerView.getAdapter();
+        if (adapter == null) return;
+        ItemHomeEntranceViewModel viewModel = new ItemHomeEntranceViewModel();
+        viewModel.getTitle().setValue("哈哈哈");
+        ItemHomeEntranceViewModel viewModel1 = new ItemHomeEntranceViewModel();
+        viewModel1.getTitle().setValue("呵呵呵");
+        ArrayList<ItemHomeEntranceViewModel> entranceViewModels = new ArrayList<>();
+        entranceViewModels.add(viewModel);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        entranceViewModels.add(viewModel1);
+        adapter.setDataList(entranceViewModels);
 
     }
 
