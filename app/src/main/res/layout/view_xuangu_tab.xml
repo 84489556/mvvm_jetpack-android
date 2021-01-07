@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="选股tab"
+        android:textSize="17sp"
+        android:textColor="@color/color_xg_tabheader"
+        android:layout_marginRight="3dp"/>
+
+    <ImageView
+        android:id="@+id/tab_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/main_select"
+        android:layout_toRightOf="@id/tab_text"
+        />
+
+</RelativeLayout>

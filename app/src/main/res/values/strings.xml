@@ -2,4 +2,26 @@
     <string name="app_name">huixuangu-android</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="xuangu_tab_yanbaocelue">研报策略</string>
+    <string name="xuangu_tab_tesezhibiaoxuangu">特色指标选股</string>
+    <string name="xuangu_tab_zijinjiemi">资金揭秘</string>
+    <string name="xuangu_tab_rediancelue">热点策略</string>
+    <string name="xuangu_tab_zhuticelue">主题策略</string>
+    <string name="xuangu_tab_jiazhicelue">价值策略</string>
+    <string name="xuangu_tab_mingshijingxuan">名师精选</string>
+    <string name="xuangu_jianjie">简介</string>
+    <string name="xuangu_shipin">测试免费套系1</string>
+    <string name="xuangu_chengzhangxuetang">成长学堂</string>
+    <string name="xuangu_ruxuangupiao">入选股票</string>
+    <string name="xuangu_zhangfukongjianda">涨幅空间大</string>
+    <string name="xuangu_mingxingjigoutuijian">明星机构推荐</string>
+    <string name="xuangu_mingxingfenxishituijian">明星分析师推荐</string>
+    <string name="xuangu_table_riqi">日期</string>
+    <string name="xuangu_table_biaoti">标题</string>
+    <string name="xuangu_table_xiangguangupiao">相关股票</string>
+    <string name="xuangu_table_mubiaoozhangfu">目标涨幅%</string>
+    <string name="xuangu_table_mubiaojia">目标价(元)</string>
+    <string name="xuangu_table_faburishoupanjia">发布日收盘价(元)</string>
+    <string name="xuangu_table_faburijigou">发布机构</string>
 </resources>
