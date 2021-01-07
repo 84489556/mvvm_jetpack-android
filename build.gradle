@@ -32,3 +32,13 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    // Sdk and tools
+//    minSdkVersion = 19
+//    targetSdkVersion = 28
+//    compileSdkVersion = 28
+
+    autosizeVersion = '1.2.1'
+
+}

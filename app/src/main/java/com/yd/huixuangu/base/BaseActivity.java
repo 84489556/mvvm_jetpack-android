@@ -3,30 +3,21 @@ package com.yd.huixuangu.base;
 import android.app.Activity;
 import android.app.Application;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.yd.huixuangu.R;
 import com.yd.huixuangu.net.socket.SocketModule;
 import com.yd.huixuangu.net.socket.WebSocketListener;
 import com.yd.huixuangu.net.socket.WebSocketReceive;
 import com.yd.huixuangu.utils.BarUtils;
-
-import static com.reactlibrary.utils.CommonUtil.getStatusBarHeight;
 
 public abstract class BaseActivity extends AppCompatActivity implements WebSocketListener {
 
@@ -134,6 +125,8 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
         if (mBinding != null) mBinding.unbind();
         if (mBinding != null) mBinding = null;
     }
+
+
 
 
     /**

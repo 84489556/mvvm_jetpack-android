@@ -17,10 +17,12 @@ import com.yd.huixuangu.adapter.main.MainFragmentStateAdapter;
 import com.yd.huixuangu.base.BaseFragment;
 import com.yd.huixuangu.base.DataBindingConfig;
 import com.yd.huixuangu.databinding.FragmentMainBinding;
+import com.yd.huixuangu.ui.activity.MainActivity;
 import com.yd.huixuangu.ui.fragment.dabang.DaBangFragment;
 import com.yd.huixuangu.ui.fragment.guandian.GanDianFragment;
 import com.yd.huixuangu.ui.fragment.kanshi.KanShiFragment;
 import com.yd.huixuangu.ui.fragment.xuangu.XuanGuFragment;
+import com.yd.huixuangu.utils.BarUtils;
 import com.yd.huixuangu.viewmodel.main.MainFragmentViewModel;
 
 import java.util.ArrayList;
@@ -99,12 +101,16 @@ public class MainFragment extends BaseFragment implements TabLayoutMediator.TabC
                 TextView textView = customView.findViewById(R.id.main_tab_text);
                 int tag = (int) customView.getTag();
                 if (tag == 0) iconView.setImageResource(R.mipmap.kanshi_select);
-                if (tag == 1) iconView.setImageResource(R.mipmap.guandian_select);
+                if (tag == 1)  iconView.setImageResource(R.mipmap.guandian_select);
                 if (tag == 2) iconView.setImageResource(R.mipmap.main_select);
                 if (tag == 3) iconView.setImageResource(R.mipmap.dabang_select);
                 if (tag == 4) iconView.setImageResource(R.mipmap.xuangu_select);
+                if(tag==1){
+                    BarUtils.setStatusBarLightMode((MainActivity)getActivity(),true );//透明状态栏
+                }else {
+                    BarUtils.setStatusBarLightMode((MainActivity)getActivity(),false );//透明状态栏
+                }
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 View customView = tab.getCustomView();

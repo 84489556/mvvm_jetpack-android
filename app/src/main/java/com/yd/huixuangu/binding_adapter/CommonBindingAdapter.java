@@ -17,7 +17,6 @@
 package com.yd.huixuangu.binding_adapter;
 
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -85,7 +84,6 @@ public class CommonBindingAdapter {
 
     @BindingAdapter(value = {"marginStatusBarHight"},requireAll = false)
     public static void marginStatusBarHight(ConstraintLayout view, String s ) {
-        Log.e("TAG", "marginStatusBarHight: "+s );
         //ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(view.getLayoutParams()) ;
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         layoutParams.setMargins(0, BarUtils.getStatusBarHeight(),0,0);

@@ -6,6 +6,7 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="black_66">#66000000</color>
     <color name="F1F1F1">#F1F1F1</color>
     <!-- chat -->
     <color name="chat_view_bg">#f5f5f5</color>
@@ -35,4 +36,9 @@
 
     <color name="black_a">#99000000</color>
     <color name="black_20">#33000000</color>
+
+
+
+    <!--观点相关颜色    -->
+    <color name="red_title_slecet">#FFFF3636</color>
 </resources>

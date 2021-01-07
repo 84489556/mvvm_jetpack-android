@@ -1,8 +1,14 @@
 package com.yd.huixuangu.viewmodel.guandian;
 
+import androidx.databinding.ObservableArrayList;
 import androidx.lifecycle.ViewModel;
 
-import com.yd.huixuangu.base.BaseViewModel;
+public class GuanDianFragmentViewModel extends ViewModel {
+    public final ObservableArrayList<String> tabNames = new ObservableArrayList<String>();
 
-public class GuanDianFragmentViewModel extends BaseViewModel {
+    {
+        tabNames.add("专家分析");
+        tabNames.add("热点聚焦");
+        tabNames.add("资讯");
+    }
 }
