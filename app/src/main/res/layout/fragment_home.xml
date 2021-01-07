@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -16,14 +18,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/F1F1F1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,10 +45,17 @@
 
             <com.youth.banner.Banner
                 android:id="@+id/main_banner"
-                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/color_btn_normal" />
+            </com.youth.banner.Banner>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/zhishu_recyclerView"
@@ -55,6 +63,208 @@
                 android:layout_height="91dp"
                 android:layout_marginTop="5dp" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↑201家" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="↓201家" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/bankuaiyidong_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="板块异动"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:id="@+id/bankuaiyidong_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@+id/bankuaiyidong_title"
+                    android:background="#66CCFF" />
+
+                <TextView
+                    android:id="@+id/bankuaiyidong_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="117dp"
+                    android:layout_below="@+id/bankuaiyidong_line"
+                    android:background="@color/white"
+                    android:text="板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动板块异动"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bankuaiyidong_view"
+                    android:text="09:30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bankuaiyidong_view"
+                    android:layout_alignParentEnd="true"
+                    android:text="09:30" />
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hot_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/hot_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="热点聚焦"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textview_border"
+                    android:text="查看更多"
+                    app:layout_constraintBottom_toBottomOf="@+id/hot_title"
+                    app:layout_constraintEnd_toEndOf="@+id/hot_title"
+                    app:layout_constraintTop_toTopOf="@+id/hot_title" />
+
+
+                <TextView
+                    android:id="@+id/hot_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#66CCFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_title" />
+
+                <TextView
+                    android:id="@+id/hot_msg_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中国证券业协会证券投资咨询机构"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_line" />
+
+
+                <TextView
+                    android:id="@+id/hot_msg_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2018-8-8"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_msg_title" />
+
+                <TextView
+                    android:id="@+id/hot_msg_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中国证券行业协会机构在北京召开第八次任命代表大会。大会中说这只是一个测试字符"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_msg_time" />
+
+
+                <TextView
+                    android:id="@+id/live_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="观点直播"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_msg_content" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textview_border"
+                    android:text="查看更多"
+                    app:layout_constraintBottom_toBottomOf="@+id/live_title"
+                    app:layout_constraintEnd_toEndOf="@+id/live_title"
+                    app:layout_constraintTop_toTopOf="@+id/live_title" />
+
+                <TextView
+                    android:id="@+id/hot_round"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/main_hot_round"
+                    app:layout_constraintEnd_toStartOf="@+id/hot_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/live_title"
+                    />
+
+                <ImageView
+                    android:id="@+id/hot_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/kanshi_select"
+                    app:layout_constraintBottom_toBottomOf="@+id/hot_round"
+                    app:layout_constraintStart_toEndOf="@+id/hot_round"
+                    app:layout_constraintTop_toBottomOf="@+id/live_title" />
+
+
+                <TextView
+                    android:id="@+id/live_content_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="源达名师"
+                    android:textSize="17dp"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_icon" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="标签最多八个字符"
+                    app:layout_constraintBottom_toBottomOf="@+id/live_content_title"
+                    app:layout_constraintEnd_toEndOf="@+id/live_content_title"
+                    app:layout_constraintTop_toTopOf="@+id/live_content_title" />
+
+
+
+
+                <TextView
+                    android:id="@+id/live_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中金所宣布了一些列股指期货严格管控措施，国指期货的交易量随之大幅萎缩"
+                    android:textColor="#CC000000"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/live_content_title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
         </LinearLayout>
 
     </ScrollView>
