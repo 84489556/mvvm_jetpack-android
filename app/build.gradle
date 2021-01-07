@@ -71,7 +71,8 @@ dependencies {
 
     //轮播图
     implementation 'com.youth.banner:banner:2.1.0'
-
+    //头条方案集成
+    implementation "me.jessyan:autosize:$rootProject.autosizeVersion"
     //ECharts java
 //    implementation 'com.github.abel533:ECharts:3.0.0.6'
 }
