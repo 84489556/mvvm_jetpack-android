@@ -26,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
     private ViewModelProvider mApplicationProvider;
     protected ViewDataBinding mBinding;
 
+    private WebSocketListener wsCallBack;
 
     /**
      * initViewModel();
@@ -106,10 +107,20 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
         return mApplicationProvider.get(modelClass);
     }
 
+
+    protected void setSubscribe(WebSocketListener wsCallBack) {
+        if (wsCallBack != null) {
+            this.wsCallBack = wsCallBack;
+        }
+    }
+
     /**
      * socket返回数据时会掉
      */
-    public void receiveSocket(SocketModule data) {
+    public void onReceiveSocket(SocketModule data) {
+        if (this.wsCallBack != null) {
+            this.wsCallBack.onReceiveSocket(data);
+        }
     }
 
 
@@ -125,8 +136,6 @@ public abstract class BaseActivity extends AppCompatActivity implements WebSocke
         if (mBinding != null) mBinding.unbind();
         if (mBinding != null) mBinding = null;
     }
-
-
 
 
     /**

@@ -48,7 +48,7 @@ public class WebSocketReceive implements ISocketListener {
         if (socketModule.getData() == null) return;
         if (socketModule.getData().getNodePath() == null) return;
         if (listener == null) return;
-        listener.receiveSocket(socketModule);
+        listener.onReceiveSocket(socketModule);
 
     }
 

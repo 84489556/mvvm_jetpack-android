@@ -3,7 +3,13 @@ package com.yd.huixuangu.repository.main;
 import android.util.Log;
 
 import com.yd.huixuangu.base.BaseRepository;
+import com.yd.huixuangu.base.HuiXuanGuApplication;
 import com.yd.huixuangu.bean.GaoguanjingmaishichangtongjiBean;
+import com.yd.huixuangu.net.socket.CMDConstant;
+import com.yd.huixuangu.net.socket.NodePath;
+import com.yd.huixuangu.net.socket.RequestModule;
+import com.yd.ydyun.GsonSingle;
+import com.yd.ydyun.websocket.YDYWebSocketManage;
 
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -99,12 +105,11 @@ public class MainFragmentRepository extends BaseRepository {
     /**
      * zip可以把两次请求"结果"合并到一起
      * 其中一个失败，就会走onError
-     *
+     * <p>
      * BiFunction
      * T - 函数的第一个参数的类型
      * U - 函数的第二个参数的类型
      * R - 函数结果的类型
-     *
      */
 
     public void request2() {
@@ -113,7 +118,7 @@ public class MainFragmentRepository extends BaseRepository {
             public Object apply(Object o, Object o2) throws Throwable {
                 Log.d("wgl o apply ", o.toString());
                 Log.d("wgl o2 apply ", o2.toString());
-                return o2.toString().concat("---------"+o.toString());
+                return o2.toString().concat("---------" + o.toString());
             }
 
         }).subscribe(new Observer<Object>() {
@@ -141,4 +146,18 @@ public class MainFragmentRepository extends BaseRepository {
     }
 
 
+    /**
+     * 通过这个可以得到首页 涨了xxx家 ，跌了xxx家那个数据
+     * 我也不知道 cmd 是什么的缩写   我查看了下RN的用法 只有开关两个值
+     * socketID我也不知道是啥
+     * path 就是节点的路径
+     */
+    public void subscribeNodeMianZhangDieFu() {
+        RequestModule build = RequestModule.builder().cmd(CMDConstant.ON)
+                .id(HuiXuanGuApplication.socketID)
+                .path(NodePath.sczl)
+                .build();
+        String sczl = GsonSingle.getInstance().toJson(build);
+        YDYWebSocketManage.getInstance().subscribe(sczl);
+    }
 }

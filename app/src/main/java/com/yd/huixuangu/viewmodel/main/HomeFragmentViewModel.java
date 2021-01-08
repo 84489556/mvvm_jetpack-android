@@ -1,5 +1,7 @@
 package com.yd.huixuangu.viewmodel.main;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -7,39 +9,28 @@ import com.yd.huixuangu.base.BaseViewModel;
 import com.yd.huixuangu.repository.main.MainFragmentRepository;
 
 public class HomeFragmentViewModel extends BaseViewModel {
-    private MutableLiveData<String> one;
-    private MutableLiveData<String> two;
-    private MutableLiveData<String> three;
+    private MainFragmentRepository repository;
 
-    public MutableLiveData<String> getOne() {
-        if (one == null) {
-            one = new MutableLiveData<>();
-            one.setValue("我是初始数据1");
-        }
-        return one;
-    }
-
-    public MutableLiveData<String> getTwo() {
-        if (two == null) {
-            two = new MutableLiveData<>();
-            two.setValue("我是初始数据2");
-        }
-        return two;
-    }
-
-    public MutableLiveData<String> getThree() {
-        if (three == null) {
-            three = new MutableLiveData<>();
-            three.setValue("我是初始数据3");
-        }
-        return three;
-    }
-
-
+    /**
+     * 这里的是多个接口一起用的情况
+     */
     public void sendRequest() {
-        MainFragmentRepository repository = new MainFragmentRepository();
+        if (repository == null) {
+            repository = new MainFragmentRepository();
+        }
+
         repository.request2();
+    }
 
 
+    /**
+     * 涨跌幅 ，就是首页有一个    ↑280家 -------/------- 209家↓
+     */
+    public void subscribeNodeMianZhangDieFu() {
+
+        if (repository == null) {
+            repository = new MainFragmentRepository();
+        }
+        repository.subscribeNodeMianZhangDieFu();
     }
 }

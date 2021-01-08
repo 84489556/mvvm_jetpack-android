@@ -60,7 +60,7 @@ public class YDYWebSocketManage {
      * 监听某一个节点信息
      */
 
-    public void sendMsg( String msg) {
+    public void subscribe( String msg) {
         WebSocket socket = WSSocketController.getSocket();
         if (socket != null) {
             Log.d("wgl sendMsg",msg);

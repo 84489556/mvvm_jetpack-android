@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
-            name="data"
-            type="com.yd.huixuangu.viewmodel.main.ItemHomeRecyclerViewZhiShu" />
+            name="mainZhushu"
+            type="com.yd.huixuangu.viewmodel.main.ItemMainZhuShuVM" />
 
+        <variable
+            name="mainfragmentcallback"
+            type="com.yd.huixuangu.ui.fragment.main.HomeFragment.HomeFragmentCallBack" />
     </data>
 
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="116dp"
         android:layout_height="91dp"
-        android:layout_marginLeft="3dp"
+        android:layout_marginLeft="5dp"
         android:background="@color/colorAccent"
-        android:text="123456"></TextView>
+        android:onClick="@{()->mainfragmentcallback.zhiShuOnClick()}">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="@{mainZhushu.title}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="3.5%"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"></TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -9,10 +9,11 @@ import com.yd.huixuangu.BR;
 import com.yd.huixuangu.R;
 import com.yd.huixuangu.base.BaseActivity;
 import com.yd.huixuangu.base.DataBindingConfig;
+import com.yd.huixuangu.net.socket.SocketModule;
 import com.yd.huixuangu.viewmodel.MainActivityViewModel;
 
 
-public class MainActivity extends BaseActivity  {
+public class MainActivity extends BaseActivity {
     private MainActivityViewModel mModel;
 
 
@@ -41,12 +42,14 @@ public class MainActivity extends BaseActivity  {
     }
 
 
-
-
     @Override
     protected void onResume() {
         super.onResume();
     }
 
 
+    @Override
+    public void onReceiveSocket(SocketModule data) {
+        super.onReceiveSocket(data);
+    }
 }

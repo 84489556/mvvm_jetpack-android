@@ -21,6 +21,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.yd.huixuangu.net.socket.SocketModule;
+import com.yd.huixuangu.net.socket.WebSocketListener;
+import com.yd.huixuangu.ui.activity.MainActivity;
+
 public abstract class BaseFragment extends Fragment {
 
     protected AppCompatActivity mActivity;
@@ -100,6 +104,13 @@ public abstract class BaseFragment extends Fragment {
         initViewModel();
     }
 
+    protected void setSubscribe(WebSocketListener callBack) {
+        if (mActivity instanceof BaseActivity) {
+            BaseActivity mActivity = (BaseActivity) this.mActivity;
+            mActivity.setSubscribe(callBack);
+        }
+    }
+
 
     @Nullable
     @Override
@@ -117,9 +128,11 @@ public abstract class BaseFragment extends Fragment {
         return mBinding.getRoot();
     }
 
-    protected  void initView(){
+    protected void initView() {
 
-    };
+    }
+
+    ;
 
     @Override
     public void onDestroy() {

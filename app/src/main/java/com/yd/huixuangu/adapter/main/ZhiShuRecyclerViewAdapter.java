@@ -5,38 +5,49 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yd.huixuangu.R;
-import com.yd.huixuangu.bean.main.ItemMainEntranceBean;
+import com.yd.huixuangu.ui.fragment.main.HomeFragment;
+import com.yd.huixuangu.viewmodel.main.ItemMainZhuShuVM;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ZhiShuRecyclerViewAdapter extends RecyclerView.Adapter<ZhiShuRecyclerViewAdapter.ZhishuHoder> {
-    private List<String> mDataList;
+    private List<ItemMainZhuShuVM> mDataList;
+    HomeFragment.HomeFragmentCallBack homeFragmentCallBack;
 
-    public ZhiShuRecyclerViewAdapter() {
-        mDataList = new ArrayList<>();
-        mDataList.add("1");
-        mDataList.add("2");
-        mDataList.add("3");
-        mDataList.add("4");
-        mDataList.add("5");
-        mDataList.add("6");
+    public ZhiShuRecyclerViewAdapter(HomeFragment.HomeFragmentCallBack callBack) {
+        this.homeFragmentCallBack = callBack;
+    }
+
+
+    public void setzhishuDataList(List<ItemMainZhuShuVM> mDataList) {
+        if (this.mDataList == null) {
+            this.mDataList = new ArrayList<>();
+        }
+        this.mDataList.clear();
+        this.mDataList.addAll(mDataList);
+        notifyDataSetChanged();
+
     }
 
     @NonNull
     @Override
     public ZhishuHoder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater from = LayoutInflater.from(parent.getContext());
-        View view = from.inflate(R.layout.item_home_recyclerview_zhishu, parent, false);
-        return new ZhishuHoder(view);
+        ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_home_recyclerview_zhishu, parent, false);
+        return new ZhishuHoder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ZhishuHoder holder, int position) {
-
+        holder.binding.setVariable(BR.mainZhushu, mDataList.get(position));
+        holder.binding.setVariable(BR.mainfragmentcallback, homeFragmentCallBack);
+        holder.binding.executePendingBindings();
     }
 
 
@@ -45,10 +56,15 @@ public class ZhiShuRecyclerViewAdapter extends RecyclerView.Adapter<ZhiShuRecycl
         return mDataList.size();
     }
 
-    static class ZhishuHoder extends RecyclerView.ViewHolder {
 
-        public ZhishuHoder(@NonNull View itemView) {
-            super(itemView);
+    static class ZhishuHoder extends RecyclerView.ViewHolder {
+        ViewDataBinding binding;
+
+        public ZhishuHoder(ViewDataBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
+
+
 }

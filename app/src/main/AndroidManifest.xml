@@ -29,7 +29,6 @@
         </activity>
         <activity android:name=".ui.activity.TestActivity"/>
 
-        <activity android:name="com.yuanda.usercenter.ui.activity.LoginActivity" />
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
 

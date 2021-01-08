@@ -20,13 +20,15 @@ public class EntranceRecyclerViewAdapter extends RecyclerView.Adapter<
     private List<ItemHomeEntranceViewModel> mDataList;
 
     public void setDataList(List<ItemHomeEntranceViewModel> mDataList) {
+        if (this.mDataList == null) {
+            this.mDataList = new ArrayList<>();
+        }
         this.mDataList.clear();
         this.mDataList.addAll(mDataList);
         notifyDataSetChanged();
     }
 
     public EntranceRecyclerViewAdapter() {
-        mDataList = new ArrayList<>();
     }
 
     @NonNull
