@@ -25,13 +25,21 @@ public class HostHelp {
      */
     public static String YDY_HOST = "";
 
+    /**
+     * 选股跟地址
+     * IsRelease ? https://ydhxg-prod-admin2.yd.com.cn/api : http://ydhxg-api.yd.com.cn:9091
+     */
+    public static String XG_HOST = "";
+
     static {
         if (BuildConfig.DEBUG) {
             HXG_HOST = "http://ydhxg-api.yd.com.cn:8443";
-            YDY_HOST = "https://yun.ydtg.com.cn";
+            YDY_HOST = "https://csyun-slb.yd.com.cn";
+            XG_HOST = "http://ydhxg-api.yd.com.cn:9091";
         } else {
             YDY_HOST = "https://yun.ydtg.com.cn";
             HXG_HOST = "https://ydhxg-prod-api.yd.com.cn";
+            XG_HOST = "https://ydhxg-prod-admin2.yd.com.cn/api";
         }
     }
 

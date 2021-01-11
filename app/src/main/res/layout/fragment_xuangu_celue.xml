@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yd.huixuangu.viewmodel.xuangu.XuanGuViewModel" />
+        <variable
+            name="clickEvent"
+            type="com.yd.huixuangu.ui.fragment.xuangu.YanBaoCeLueFragment.ClickEventHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_xg_header_bg">
+
+        <TextView android:id="@+id/jianJie_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xuangu_jianjie"
+            android:textColor="@color/color_xg_tabheader"
+            android:onClick="@{()->clickEvent.onBrifClick()}"
+            />
+
+        <TextView android:id="@+id/xuetang_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xuangu_chengzhangxuetang"
+            android:textColor="@color/color_xg_tabheader"
+            android:onClick="@{()->clickEvent.onXueTangClick()}"
+            android:layout_toRightOf="@id/jianJie_tv"
+            android:layout_marginLeft="60dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/ceLue_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@color/white"
+            app:tabIndicatorHeight="1dp"
+            android:layout_below="@id/jianJie_tv"
+            app:tabIndicatorColor="@color/color_F92400"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/ceLue_view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ceLue_tab_layout"
+            android:background="@color/white"/>
+    </RelativeLayout>
+
+</layout>

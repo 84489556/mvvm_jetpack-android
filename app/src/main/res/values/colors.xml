@@ -23,5 +23,5 @@
     <color name="color_F92400">#F92400</color>
     <color name="color_xg_header_bg">#20212b</color>
     <color name="color_xg_tabheader">#66ffffff</color>
-    <color name="color_xg_tabheader_selected">#F92400</color>
+    <color name="color_xg_tabheader_selected">@color/color_F92400</color>
 </resources>

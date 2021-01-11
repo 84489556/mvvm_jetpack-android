@@ -12,6 +12,7 @@ public class HostManage {
     static {
         hostMap.put(HostKey.HXG, HostHelp.HXG_HOST);
         hostMap.put(HostKey.YDY, HostHelp.YDY_HOST);
+        hostMap.put(HostKey.XG, HostHelp.XG_HOST);
     }
 
     public static HashMap<String, String> getHostMap() {
@@ -21,5 +22,6 @@ public class HostManage {
     public static class HostKey {
         static final String HXG = "HXG";
         static final String YDY = "YDY";
+        static final String XG = "XG";
     }
 }

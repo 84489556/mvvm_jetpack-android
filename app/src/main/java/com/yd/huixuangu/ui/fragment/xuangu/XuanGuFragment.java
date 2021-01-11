@@ -22,7 +22,6 @@ public class XuanGuFragment extends BaseFragment {
     XuanGuFragmentViewModel mViewModel;
 
     private static XuanGuFragment xuanGuFragment;
-    private ArrayList<Fragment> fragments = new ArrayList<>();
 
     public static XuanGuFragment getInstance() {
         if (xuanGuFragment == null) {
@@ -49,7 +48,7 @@ public class XuanGuFragment extends BaseFragment {
     }
     private void initFragments(){
         FragmentXuanguBinding mBinding = (FragmentXuanguBinding) this.mBinding;
-        fragments.clear();
+        ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new YanBaoCeLueFragment());
         fragments.add(new TeSeZhiBiaoFragment());
         fragments.add(new YanBaoCeLueFragment());

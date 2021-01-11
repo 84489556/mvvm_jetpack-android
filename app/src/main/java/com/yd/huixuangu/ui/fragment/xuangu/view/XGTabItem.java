@@ -19,6 +19,11 @@ public class XGTabItem {
         return new XGTabItem(text,drawableId);
     }
 
+    /**
+     * 顶部tab
+     * @param level
+     * @return
+     */
     public static List<XGTabItem> getHeaderTabs(int level){
         ArrayList<XGTabItem> tabs = new ArrayList<>();
         switch (level){
@@ -53,6 +58,18 @@ public class XGTabItem {
                 break;
             default:
         }
+        return tabs;
+    }
+
+    /**
+     * 研报策略tab
+     * @return
+     */
+    public static List<XGTabItem> getCeLueTabs(){
+        ArrayList<XGTabItem> tabs = new ArrayList<>();
+        tabs.add(XGTabItem.create(R.string.xuangu_zhangfukongjianda,0));
+        tabs.add(XGTabItem.create(R.string.xuangu_mingxingjigoutuijian,0));
+        tabs.add(XGTabItem.create(R.string.xuangu_mingxingfenxishituijian,0));
         return tabs;
     }
 }

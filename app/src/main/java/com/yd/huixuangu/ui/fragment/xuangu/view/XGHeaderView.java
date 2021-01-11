@@ -53,6 +53,7 @@ public class XGHeaderView extends LinearLayout implements TabLayoutMediator.TabC
     }
     public void attach(ViewPager2 viewPager) {
         this.mViewPager = viewPager;
+        this.mViewPager.setUserInputEnabled(false);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(mViewBinding.xgTabLayout, mViewPager, this);
         tabLayoutMediator.attach();
     }

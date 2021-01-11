@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yd.huixuangu.viewmodel.xuangu.ZhangFuViewModel" />
+
+        <variable
+            name="clickEvent"
+            type="com.yd.huixuangu.ui.fragment.xuangu.ZhangFuFragment.ClickEventHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取涨幅空间列表数据"
+            android:onClick="@{()->clickEvent.onclick()}"/>
+
+    </RelativeLayout>
+
+</layout>

@@ -24,4 +24,15 @@
     <string name="xuangu_table_mubiaojia">目标价(元)</string>
     <string name="xuangu_table_faburishoupanjia">发布日收盘价(元)</string>
     <string name="xuangu_table_faburijigou">发布机构</string>
+
+    <string name="xuangu_table_jigou_tuijian">明星机构推荐</string>
+    <string name="xuangu_table_jigou_guzhu">行业关注度</string>
+    <string name="xuangu_table_jigou_gegu">个股关注度</string>
+    <string name="xuangu_table_jigou_mairu">买入评级</string>
+    <string name="xuangu_table_jigou_zengchi">增持评级</string>
+
+    <string name="xuangu_table_shi_tuijian">明星分析师推荐</string>
+    <string name="xuangu_table_shi_guzhu">行业关注度</string>
+    <string name="xuangu_table_shi_gegu">个股关注度</string>
+    <string name="xuangu_table_shi_kanduo">看多评级</string>
 </resources>
