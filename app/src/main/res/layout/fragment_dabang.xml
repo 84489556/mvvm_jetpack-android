@@ -6,7 +6,7 @@
 
         <variable
             name="dabang"
-            type="com.yd.huixuangu.viewmodel.dabang.DaBangFragmentViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.dabang.DaBangFragmentViewModel" />
 
     </data>
 
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toBottomOf="@id/dabang_top_lay"
             android:background="@color/color_20222C"
             />
-        <com.yd.huixuangu.ui.fragment.dabang.EchartView
+        <com.yuanda.huixuangu.ui.fragment.dabang.EchartView
             android:id="@+id/dabang_longhubang_wv"
             android:layout_width="match_parent"
             android:layout_height="400dp"

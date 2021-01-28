@@ -5,15 +5,15 @@
     <data>
         <variable
             name="guandian"
-            type="com.yd.huixuangu.viewmodel.guandian.GuanDianFragmentViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.guandian.GuanDianFragmentViewModel" />
 
         <variable
             name="event"
-            type="com.yd.huixuangu.ui.fragment.guandian.GanDianFragment.EventHandler" />
+            type="com.yuanda.huixuangu.ui.fragment.guandian.GanDianFragment.EventHandler" />
 
         <variable
             name="click"
-            type="com.yd.huixuangu.ui.fragment.guandian.GanDianFragment.ClickProxy" />
+            type="com.yuanda.huixuangu.ui.fragment.guandian.GanDianFragment.ClickProxy"/>
 
         <variable name="name" type="String" />
 

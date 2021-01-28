@@ -5,7 +5,7 @@
     <data>
         <variable
             name="expertanalysis"
-            type="com.yd.huixuangu.viewmodel.guandian.ExpertAnalysisViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.guandian.ExpertAnalysisViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

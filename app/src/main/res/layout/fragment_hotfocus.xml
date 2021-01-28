@@ -5,7 +5,7 @@
     <data>
         <variable
             name="hotfocus"
-            type="com.yd.huixuangu.viewmodel.guandian.HotFocusViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.guandian.HotFocusViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

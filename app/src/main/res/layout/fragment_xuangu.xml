@@ -7,7 +7,7 @@
 
         <variable
             name="xuangu"
-            type="com.yd.huixuangu.viewmodel.xuangu.XuanGuFragmentViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.xuangu.XuanGuFragmentViewModel" />
     </data>
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.yd.huixuangu.ui.fragment.xuangu.view.XGHeaderView
+        <com.yuanda.huixuangu.ui.fragment.xuangu.view.XGHeaderView
             android:id="@+id/xgHeaderView"
             android:layout_width="match_parent"
             android:layout_height="45dp"/>

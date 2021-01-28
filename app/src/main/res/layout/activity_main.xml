@@ -7,11 +7,8 @@
 
         <variable
             name="mainModel"
-            type="com.yd.huixuangu.viewmodel.MainActivityViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.MainActivityViewModel" />
 
-        <variable
-            name="event"
-            type="com.yd.huixuangu.ui.activity.MainActivity.EventHandler" />
     </data>
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"

@@ -5,11 +5,11 @@
 
         <variable
             name="secondViewModel"
-            type="com.yd.huixuangu.viewmodel.SecondFragmentViewModel" />
+            type="com.yuanda.huixuangu.viewmodel.SecondFragmentViewModel" />
 
         <variable
             name="callback"
-            type="com.yd.huixuangu.ui.fragment.SecondFragment.SecondFragmentCallBack" />
+            type="com.yuanda.huixuangu.ui.fragment.SecondFragment.SecondFragmentCallBack" />
 
     </data>
 
