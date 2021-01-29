@@ -5,7 +5,7 @@
     <data>
         <variable
             name="news"
-            type="com.yuanda.huixuangu.viewmodel.guandian.NewsViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.guandian.NewsViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

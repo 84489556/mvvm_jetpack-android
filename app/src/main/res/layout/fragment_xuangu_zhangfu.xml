@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.yuanda.huixuangu.viewmodel.xuangu.ZhangFuViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.xuangu.ZhangFuViewModel" />
 
         <variable
             name="clickEvent"
-            type="com.yuanda.huixuangu.ui.fragment.xuangu.ZhangFuFragment.ClickEventHandler" />
+            type="com.yuanda.cy_professional_select_stock.ui.fragment.xuangu.ZhangFuFragment.ClickEventHandler" />
     </data>
 
     <RelativeLayout

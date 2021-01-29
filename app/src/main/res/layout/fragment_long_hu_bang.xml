@@ -4,7 +4,7 @@
     <data>
         <variable
             name="longHuBang"
-            type="com.yuanda.huixuangu.viewmodel.dabang.LongHuBangFragmentViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.dabang.LongHuBangFragmentViewModel" />
     </data>
 
     <FrameLayout

@@ -2,13 +2,13 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <import type="com.yuanda.huixuangu.adapter.dabang.DaBangFunctionAdapter" />
+        <import type="com.yuanda.cy_professional_select_stock.adapter.dabang.DaBangFunctionAdapter" />
         <variable
             name="item"
-            type="com.yuanda.huixuangu.adapter.dabang.DaBangFunctionAdapter.Item" />
+            type="com.yuanda.cy_professional_select_stock.adapter.dabang.DaBangFunctionAdapter.Item" />
         <variable
             name="viewClick"
-            type="com.yuanda.huixuangu.adapter.dabang.interfaces.DaBangFunViewClick" />
+            type="com.yuanda.cy_professional_select_stock.adapter.dabang.interfaces.DaBangFunViewClick" />
     </data>
 
 

@@ -7,7 +7,7 @@
 
         <variable
             name="entrance"
-            type="com.yuanda.huixuangu.viewmodel.main.ItemHomeEntranceViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.main.ItemHomeEntranceViewModel" />
     </data>
 
     <RelativeLayout

@@ -5,11 +5,11 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.yd.huixuangu"
+        applicationId "com.yuanda.cy_professional_select_stock"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 1000000
+        versionName "999999"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {

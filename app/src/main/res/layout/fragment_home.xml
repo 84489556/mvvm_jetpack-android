@@ -7,11 +7,11 @@
 
         <variable
             name="home"
-            type="com.yuanda.huixuangu.viewmodel.main.HomeFragmentViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.main.HomeFragmentViewModel" />
 
         <variable
             name="callback"
-            type="com.yuanda.huixuangu.ui.fragment.main.HomeFragment.HomeFragmentCallBack" />
+            type="com.yuanda.cy_professional_select_stock.ui.fragment.main.HomeFragment.HomeFragmentCallBack" />
 
     </data>
 

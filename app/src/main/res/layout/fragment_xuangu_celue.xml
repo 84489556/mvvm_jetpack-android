@@ -6,10 +6,10 @@
     <data>
         <variable
             name="viewModel"
-            type="com.yuanda.huixuangu.viewmodel.xuangu.XuanGuViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.xuangu.XuanGuViewModel" />
         <variable
             name="clickEvent"
-            type="com.yuanda.huixuangu.ui.fragment.xuangu.YanBaoCeLueFragment.ClickEventHandler" />
+            type="com.yuanda.cy_professional_select_stock.ui.fragment.xuangu.YanBaoCeLueFragment.ClickEventHandler" />
     </data>
 
     <RelativeLayout

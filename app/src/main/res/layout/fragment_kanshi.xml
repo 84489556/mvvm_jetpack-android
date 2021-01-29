@@ -5,7 +5,7 @@
 
         <variable
             name="kanshi"
-            type="com.yuanda.huixuangu.viewmodel.kanshi.KanShiFragmentViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.kanshi.KanShiFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

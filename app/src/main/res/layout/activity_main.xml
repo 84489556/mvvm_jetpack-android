@@ -7,7 +7,7 @@
 
         <variable
             name="mainModel"
-            type="com.yuanda.huixuangu.viewmodel.MainActivityViewModel" />
+            type="com.yuanda.cy_professional_select_stock.viewmodel.MainActivityViewModel" />
 
     </data>
     <androidx.fragment.app.FragmentContainerView
