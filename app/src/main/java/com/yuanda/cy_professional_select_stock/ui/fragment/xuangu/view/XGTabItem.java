@@ -19,7 +19,9 @@ public class XGTabItem {
     public static XGTabItem create(int text, int drawableId){
         return new XGTabItem(text,drawableId);
     }
-
+    public static XGTabItem create(int text){
+        return new XGTabItem(text,0);
+    }
     /**
      * 顶部tab
      * @param level
@@ -32,30 +34,30 @@ public class XGTabItem {
             case 1:
             case 2:
             case 3:
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue,0));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu, R.mipmap.xuangu_three_vip));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu));
                 break;
             case 4:
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue,0));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu, R.mipmap.xuangu_three_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi, R.mipmap.xuangu_four_vip));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi));
                 break;
             case 5:
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue,0));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu, R.mipmap.xuangu_three_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi, R.mipmap.xuangu_four_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_rediancelue, R.mipmap.xuanu_five_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_zhuticelue, R.mipmap.xuanu_five_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_jiazhicelue, R.mipmap.xuanu_five_vip));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_rediancelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_zhuticelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_jiazhicelue));
                 break;
             case 6:
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue,0));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu, R.mipmap.xuangu_three_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi, R.mipmap.xuangu_four_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_rediancelue, R.mipmap.xuanu_five_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_zhuticelue, R.mipmap.xuanu_five_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_jiazhicelue, R.mipmap.xuanu_five_vip));
-                tabs.add(XGTabItem.create(R.string.xuangu_tab_mingshijingxuan, R.mipmap.xuangu_six_vip));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_yanbaocelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_tesezhibiaoxuangu));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_zijinjiemi));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_rediancelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_zhuticelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_jiazhicelue));
+                tabs.add(XGTabItem.create(R.string.xuangu_tab_mingshijingxuan));
                 break;
             default:
         }
@@ -68,9 +70,9 @@ public class XGTabItem {
      */
     public static List<XGTabItem> getCeLueTabs(){
         ArrayList<XGTabItem> tabs = new ArrayList<>();
-        tabs.add(XGTabItem.create(R.string.xuangu_zhangfukongjianda,0));
-        tabs.add(XGTabItem.create(R.string.xuangu_mingxingjigoutuijian,0));
-        tabs.add(XGTabItem.create(R.string.xuangu_mingxingfenxishituijian,0));
+        tabs.add(XGTabItem.create(R.string.xuangu_zhangfukongjianda));
+        tabs.add(XGTabItem.create(R.string.xuangu_mingxingjigoutuijian));
+        tabs.add(XGTabItem.create(R.string.xuangu_mingxingfenxishituijian));
         return tabs;
     }
 }

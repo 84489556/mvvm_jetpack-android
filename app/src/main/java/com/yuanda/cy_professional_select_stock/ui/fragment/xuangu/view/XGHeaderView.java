@@ -19,6 +19,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.yuanda.cy_professional_select_stock.R;
 import com.yuanda.cy_professional_select_stock.databinding.ViewXuanguHeaderBinding;
+import com.yuanda.cy_professional_select_stock.utils.DensityUtils;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,7 @@ public class XGHeaderView extends LinearLayout implements TabLayoutMediator.TabC
     }
     private void initView(Context mContext){
         this.mContext = mContext;
+//        setPadding(0,DensityUtils.getStatusBarHeight(mContext),0,0);
         this.initTabs();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -75,7 +77,8 @@ public class XGHeaderView extends LinearLayout implements TabLayoutMediator.TabC
         if (customView == null) return;
         this.mTabIndex = (int)customView.getTag();
         ((TextView)customView.findViewById(R.id.tab_text)).setTextColor(mContext.getResources().getColor(R.color.color_xg_tabheader_selected));
-        ((TextView)customView.findViewById(R.id.tab_text)). setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        ((TextView)customView.findViewById(R.id.tab_text)).setTextSize(18);
+        ((TextView)customView.findViewById(R.id.tab_text)).setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
     }
 
     @Override
@@ -83,7 +86,8 @@ public class XGHeaderView extends LinearLayout implements TabLayoutMediator.TabC
         View customView = tab.getCustomView();
         if (customView == null) return;
         ((TextView)customView.findViewById(R.id.tab_text)).setTextColor(mContext.getResources().getColor(R.color.color_xg_tabheader));
-        ((TextView)customView.findViewById(R.id.tab_text)). setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+        ((TextView)customView.findViewById(R.id.tab_text)).setTextSize(15);
+        ((TextView)customView.findViewById(R.id.tab_text)).setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
     }
 
     @Override

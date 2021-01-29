@@ -20,8 +20,8 @@
     <color name="color_0099FF">#0099FF</color>
     <color name="color_20222C">#20222C</color>
 
-    <color name="color_F92400">#F92400</color>
-    <color name="color_xg_header_bg">#20212b</color>
-    <color name="color_xg_tabheader">#66ffffff</color>
-    <color name="color_xg_tabheader_selected">@color/color_F92400</color>
+    <color name="color_FA3C3C">#FA3C3C</color>
+    <color name="color_xg_header_bg">@color/white</color>
+    <color name="color_xg_tabheader">#555555</color>
+    <color name="color_xg_tabheader_selected">@color/color_FA3C3C</color>
 </resources>

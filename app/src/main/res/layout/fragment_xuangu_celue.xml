@@ -41,7 +41,7 @@
             android:background="@color/white"
             app:tabIndicatorHeight="1dp"
             android:layout_below="@id/jianJie_tv"
-            app:tabIndicatorColor="@color/color_F92400"/>
+            app:tabIndicatorColor="@color/color_FA3C3C"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/ceLue_view_pager2"

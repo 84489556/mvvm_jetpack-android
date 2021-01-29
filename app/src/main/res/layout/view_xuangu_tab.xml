@@ -19,8 +19,8 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_centerVertical="true"
-        android:src="@mipmap/main_select"
         android:layout_toRightOf="@id/tab_text"
+        android:visibility="gone"
         />
 
 </RelativeLayout>
