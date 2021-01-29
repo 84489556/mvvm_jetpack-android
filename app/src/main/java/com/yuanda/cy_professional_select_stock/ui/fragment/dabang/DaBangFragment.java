@@ -10,11 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.reactlibrary.utils.FLog;
 import com.yuanda.cy_professional_select_stock.BR;
 import com.yuanda.cy_professional_select_stock.R;
-import com.yuanda.cy_professional_select_stock.databinding.FragmentDabangBinding;
 import com.yuanda.cy_professional_select_stock.adapter.dabang.DaBangFunctionAdapter;
 import com.yuanda.cy_professional_select_stock.adapter.dabang.interfaces.DaBangFunItemClick;
 import com.yuanda.cy_professional_select_stock.base.BaseFragment;
 import com.yuanda.cy_professional_select_stock.base.DataBindingConfig;
+import com.yuanda.cy_professional_select_stock.databinding.FragmentDabangBinding;
+import com.yuanda.cy_professional_select_stock.view.echarts.EChartsWebViewClient;
+import com.yuanda.cy_professional_select_stock.view.echarts.EchartOptionUtil;
 import com.yuanda.cy_professional_select_stock.viewmodel.dabang.DaBangFragmentViewModel;
 
 /**
@@ -72,7 +74,24 @@ public class DaBangFragment extends BaseFragment {
             }
         }));
 
-        binding.dabangLonghubangWv.setWebViewClient(new WebViewClient(){
+
+        binding.dabangLonghubangWv.setWebViewClient(new EChartsWebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
+                refreshLineChart();
+            }
+        });
+        binding.dabangUpdownWv.setWebViewClient(new EChartsWebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //最好在h5页面加载完毕后再加载数据，防止html的标签还未加载完成，不能正常显示
+                refreshLineChart();
+            }
+        });
+        binding.dabangUpWv.setWebViewClient(new EChartsWebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
@@ -82,13 +101,10 @@ public class DaBangFragment extends BaseFragment {
         });
     }
     private void refreshLineChart(){
-        Object[] x = new Object[]{
-                "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"
-        };
-        Object[] y = new Object[]{
-                820, 932, 901, 934, 1290, 1330, 1320
-        };
-        binding.dabangLonghubangWv.refreshEchartsWithOption(EchartOptionUtil.getLineChartOptions(x, y));
+        binding.dabangUpdownWv.refreshLineChart(EchartOptionUtil.getLineChartOptions().toString());
+        binding.dabangUpWv.refreshLineChart(EchartOptionUtil.getGauGeChartOptions().toString());
+//            wv_analysis.refreshLineChart(EchartOptionUtil.getBar().toString());
+//        binding.dabangLonghubangWv.refreshEchartsWithOption(EchartOptionUtil.getLineChartOptions(x, y));
     }
 
 

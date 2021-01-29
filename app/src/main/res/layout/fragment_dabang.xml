@@ -9,54 +9,71 @@
             type="com.yuanda.cy_professional_select_stock.viewmodel.dabang.DaBangFragmentViewModel" />
 
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/dabang_top_lay"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:gravity="center_vertical"
-            android:background="@color/color_20222C"
-            >
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/dabang_top_lay"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:gravity="center_vertical"
+                android:background="@color/color_20222C"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_launcher_round"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="打榜"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dabang_function_lay"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                app:layout_constraintTop_toBottomOf="@id/dabang_top_lay"
+                android:background="@color/color_20222C"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="打榜"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
+            <com.yuanda.cy_professional_select_stock.view.echarts.WebViewECharts
+                android:id="@+id/dabang_longhubang_wv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/dabang_function_lay"
                 />
-        </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dabang_function_lay"
-            android:layout_width="match_parent"
-            android:layout_height="105dp"
-            app:layout_constraintTop_toBottomOf="@id/dabang_top_lay"
-            android:background="@color/color_20222C"
-            />
-        <com.yuanda.cy_professional_select_stock.ui.fragment.dabang.EchartView
-            android:id="@+id/dabang_longhubang_wv"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/dabang_function_lay"
-            />
+            <com.yuanda.cy_professional_select_stock.view.echarts.WebViewECharts
+                android:id="@+id/dabang_updown_wv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/dabang_longhubang_wv"
+                />
+            <com.yuanda.cy_professional_select_stock.view.echarts.WebViewECharts
+                android:id="@+id/dabang_up_wv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/dabang_updown_wv"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="377dp"
+                app:layout_constraintTop_toBottomOf="@id/dabang_up_wv"
+                android:text="打榜" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="377dp"
-            app:layout_constraintTop_toBottomOf="@id/dabang_longhubang_wv"
-            android:text="打榜" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

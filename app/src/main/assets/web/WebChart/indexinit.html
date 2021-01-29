@@ -11,15 +11,26 @@
         height: 100%;
 		width: 100%;
         margin: 0px;
+        background-color: red;
+      }
+      div {
+        -webkit-tap-highlight-color:rgba(255,255,255,0);
 
       }
-
+      {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
     </style>
     <title>ECharts</title>
 
 </head>
 <body>
-    <div id="main" ></div>
+    <div id="main" style="background-color: 'red'"></div>
     <script type="text/javascript" src="./echarts.min1.js"></script>
     <script type="text/javascript">
                 var dom =document.getElementById("main");
@@ -31,6 +42,7 @@
                         myChart.setOption(option,true);
                     }
                 }
+	loadEcharts("{\"series\": [{\"height\": 200,\"type\": \"line\",\"data\": [150,230,224,218,135,147,260,110,null,null,null,null,null,null]},{\"height\": 200,\"showAllSymbol\": false,\"type\": \"line\",\"data\": [50,330,204,218,235,47,60,310,null,null,null,null,60,null]}],\"xAxis\": [{\"type\":\"category\"}],\"yAxis\": [{\"type\": \"value\"}]}");
     </script>
 </body>
 </html>
