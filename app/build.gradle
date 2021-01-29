@@ -73,6 +73,8 @@ dependencies {
     implementation 'com.youth.banner:banner:2.1.0'
     //头条方案集成
     implementation "me.jessyan:autosize:$rootProject.autosizeVersion"
+    //全局弹窗库
+    implementation "com.lxj:xpopup:$rootProject.xpopupVersion"
     //ECharts java
 //    implementation 'com.github.abel533:ECharts:3.0.0.6'
 }

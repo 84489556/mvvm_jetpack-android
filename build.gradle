@@ -40,5 +40,5 @@ ext {
 //    compileSdkVersion = 28
 
     autosizeVersion = '1.2.1'
-
+    xpopupVersion = '2.2.16'
 }

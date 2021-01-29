@@ -32,6 +32,15 @@ public class MainActivityViewModel extends BaseViewModel {
 //        });
     }
 
+    public MutableLiveData<Boolean> isInputEnabled;//用于控制观点页面滑动冲突的变量
+
+    public MutableLiveData<Boolean> getInputEnabled() {
+        if (isInputEnabled == null) {
+            isInputEnabled = new MutableLiveData<>();
+            isInputEnabled.setValue(true);
+        }
+        return isInputEnabled;
+    }
 
 
 

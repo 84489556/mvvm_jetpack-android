@@ -4,25 +4,19 @@
 
     <data>
         <variable
-            name="expertanalysis"
-            type="com.yuanda.cy_professional_select_stock.viewmodel.guandian.ExpertAnalysisViewModel" />
-
-        <variable
-            name="click"
-            type="com.yuanda.cy_professional_select_stock.ui.fragment.guandian.ExpertAnalysisnFragment.ClickProxy" />
-
+            name="oStockViewModel"
+            type="com.yuanda.cy_professional_select_stock.viewmodel.guandian.newschild.OptionalStockViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分享弹窗"
+            android:text="自选股"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{()->click.shareClick()}"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

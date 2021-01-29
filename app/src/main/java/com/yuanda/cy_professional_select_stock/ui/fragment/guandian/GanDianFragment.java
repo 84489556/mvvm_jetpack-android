@@ -1,26 +1,35 @@
 package com.yuanda.cy_professional_select_stock.ui.fragment.guandian;
 
+import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 
 import com.google.android.material.tabs.TabLayout;
 import com.yuanda.cy_professional_select_stock.BR;
 import com.yuanda.cy_professional_select_stock.R;
 import com.yuanda.cy_professional_select_stock.base.BaseFragment;
 import com.yuanda.cy_professional_select_stock.base.DataBindingConfig;
+import com.yuanda.cy_professional_select_stock.databinding.FragmentGuandianBinding;
+import com.yuanda.cy_professional_select_stock.viewmodel.MainActivityViewModel;
 import com.yuanda.cy_professional_select_stock.viewmodel.guandian.GuanDianFragmentViewModel;
+
 
 public class GanDianFragment extends BaseFragment {
 
     GuanDianFragmentViewModel mViewModel;
-
-    private static GanDianFragment daBangFragment;
+    MainActivityViewModel mainActivityViewModel;
+    private static GanDianFragment ganDianFragment;
     public static GanDianFragment getInstance(){
-        if(daBangFragment == null){
-            daBangFragment = new GanDianFragment();
+        if(ganDianFragment == null){
+            ganDianFragment = new GanDianFragment();
         }
-        return daBangFragment;
+        return ganDianFragment;
     }
+
+
     @Override
     protected DataBindingConfig getDataBindingConfig() {
         return new DataBindingConfig(R.layout.fragment_guandian, BR.guandian, mViewModel)
@@ -35,6 +44,24 @@ public class GanDianFragment extends BaseFragment {
     @Override
     protected void initViewModel() {
         mViewModel = getFragmentScopeViewModel(GuanDianFragmentViewModel.class);
+        mainActivityViewModel = getActivityScopeViewModel(MainActivityViewModel.class);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mainActivityViewModel.getInputEnabled().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                //只要收到了消息，就切换到第二个热点聚焦tab,这里目前只会是子类第一个tab往左滑时，会有通知
+                FragmentGuandianBinding mmBinding = (FragmentGuandianBinding) mBinding;
+                mmBinding.guandianViewpager2.setCurrentItem(1);
+
+            }
+        });
+
+
     }
 
     public class ClickProxy {
@@ -74,7 +101,7 @@ public class GanDianFragment extends BaseFragment {
      * @param isSelect
      */
     private void updateTabView(TabLayout.Tab tab, boolean isSelect) {
-        TextView tv_tab = (TextView) tab.getCustomView().findViewById(R.id.guandiantab__txt);
+        TextView tv_tab = tab.getCustomView().findViewById(R.id.guandiantab__txt);
         if(isSelect) {
             tv_tab.setSelected(true);
             //选中后字体变大
