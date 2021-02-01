@@ -99,13 +99,15 @@ public class NewsFragment extends BaseFragment {
                 if (currentPosition == oldPositon) {
                     switch (currentPosition){
                         case 0:
-                            if (scrolledPixeledList.size() > 1 && scrolledPixeledList.get(scrolledPixeledList.size()-1) == 0 || scrolledPixeledList.get(scrolledPixeledList.size()-1) - scrolledPixeledList.get(0) > 0) {
-                                //有可能出现滑到一半放弃的情况也是可以出现currentPosition == oldPositon=0，则先判断是否是往右滑时放弃
-                                return;
-                            }
+                            //scrolledPixeledList.size() > 1 && scrolledPixeledList.get(scrolledPixeledList.size()-1) == 0 || scrolledPixeledList.get(scrolledPixeledList.size()-1) - scrolledPixeledList.get(0) > 0
+//                            if (scrolledPixeledList.size() > 1  ) {
+//                                //有可能出现滑到一半放弃的情况也是可以出现currentPosition == oldPositon=0，则先判断是否是往右滑时放弃
+//                                return;
+//                            }
                             FragmentNewsBinding Binding = (FragmentNewsBinding) mBinding;
+                            //Log.e("TAG","radius --> " + Binding);
                             if(Binding.newsViewpager.getCurrentItem() <=0){
-                               // Log.e("TAG", "onPageScrollStateChanged: 继续往左滑" );
+                                //Log.e("TAG", "onPageScrollStateChanged: 继续往左滑" );
                                 mainActivityViewModel.getInputEnabled().setValue(false);
                             }
                             break;
