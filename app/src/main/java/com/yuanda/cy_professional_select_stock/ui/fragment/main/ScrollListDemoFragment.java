@@ -1,10 +1,13 @@
 package com.yuanda.cy_professional_select_stock.ui.fragment.main;
 
 import android.annotation.SuppressLint;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yuanda.cy_professional_select_stock.BR;
 import com.yuanda.cy_professional_select_stock.R;
 import com.yuanda.cy_professional_select_stock.adapter.main.LeftAdapter;
@@ -17,12 +20,12 @@ import com.yuanda.cy_professional_select_stock.databinding.FragmentScrolllistBin
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollListDemoFragment extends BaseFragment {
-    FragmentScrolllistBinding binding;
-    //左侧固定一列数据适配
+public class ScrollListDemoFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
+    private FragmentScrolllistBinding binding;
+    //左侧固定一列数据
     private List<String> leftListData;
 
-    //右侧数据适配
+    //右侧数据
     private List<Stock> stockList;
 
 
@@ -48,15 +51,11 @@ public class ScrollListDemoFragment extends BaseFragment {
 
 
         LeftAdapter leftAdapter = new LeftAdapter(R.layout.item_left_content, leftListData);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-        binding.leftListview.setLayoutManager(linearLayoutManager);
+        leftAdapter.setOnItemClickListener(this);
         binding.leftListview.setAdapter(leftAdapter);
 
         RightAdapter rightAdapter = new RightAdapter(R.layout.item_right_content, stockList);
-        LinearLayoutManager linearLayoutManagerR = new LinearLayoutManager(getContext());
-        linearLayoutManagerR.setOrientation(RecyclerView.VERTICAL);
-        binding.rightListview.setLayoutManager(linearLayoutManagerR);
+        rightAdapter.setOnItemClickListener(this);
         binding.rightListview.setAdapter(rightAdapter);
 
 
@@ -77,4 +76,8 @@ public class ScrollListDemoFragment extends BaseFragment {
 
     }
 
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        Toast.makeText(getContext(),position+"",Toast.LENGTH_LONG).show();
+    }
 }

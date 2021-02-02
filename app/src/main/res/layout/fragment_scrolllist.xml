@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -120,6 +120,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/left_listview"
                             android:layout_width="94dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:layout_height="match_parent" />
                         <!-- 右侧内容的父容器 实现水平滚动 -->
 
@@ -134,6 +135,7 @@
                                 android:id="@+id/right_listview"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                                 android:background="@color/design_default_color_primary_variant" />
                         </com.yuanda.cy_professional_select_stock.ui.widget.LinkageHorizontalScrollView>
                     </LinearLayout>
