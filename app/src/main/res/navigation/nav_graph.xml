@@ -37,4 +37,11 @@
         android:label="longHuBangFragment"
         tools:layout="@layout/fragment_long_hu_bang"
         />
+
+    <fragment
+        android:id="@+id/scrolllistFragment"
+        android:name="com.yuanda.cy_professional_select_stock.ui.fragment.main.ScrollListDemoFragment"
+        android:label="scrolllistFragment"
+        tools:layout="@layout/fragment_scrolllist"
+        />
 </navigation>

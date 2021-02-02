@@ -96,7 +96,9 @@
                     android:paddingBottom="10dp"
                     android:text="板块异动"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:onClick="@{()->callback.testOnClick()}"
+                    />
 
 
                 <View

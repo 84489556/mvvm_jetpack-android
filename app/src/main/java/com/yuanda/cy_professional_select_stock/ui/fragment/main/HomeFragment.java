@@ -196,6 +196,11 @@ public class HomeFragment extends BaseFragment implements WebSocketListener {
         }
 
 
+        public void testOnClick(){
+            nav().navigate(R.id.scrolllistFragment,null);
+        }
+
+
         /**
          * 这里是RXjava的多请求合并
          * 这里只写了3中操作符 merge zip concat

@@ -77,4 +77,10 @@ dependencies {
     implementation "com.lxj:xpopup:$rootProject.xpopupVersion"
     //ECharts java
 //    implementation 'com.github.abel533:ECharts:3.0.0.6'
+
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation  'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
 }

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="scrollDemo"
+            type="com.yuanda.cy_professional_select_stock.ui.fragment.main.ScrollListDemoFragment" />
+    </data>
+
+
+    <!--    整个用 scrollview 包裹，NestedScrollView的特性不用解决滑动冲突-->
+    <androidx.core.widget.NestedScrollView
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- 此部分是head部分
+            android:descendantFocusability="blocksDescendants"
+            必须写 ，不然NestedScrollView会跳动
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我是头部信息"
+                    android:textSize="@dimen/dp_40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我是头部信息"
+                    android:textSize="@dimen/dp_40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我是头部信息"
+                    android:textSize="@dimen/dp_40" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- 此部分是标题部分 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red"
+                    android:orientation="horizontal">
+
+                    <!-- 左侧标题的父容器 -->
+
+                    <RelativeLayout
+                        android:id="@+id/left_title_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="名称"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <!-- 右侧标题的父容器可实现水平滚动 -->
+
+                    <com.yuanda.cy_professional_select_stock.ui.widget.LinkageHorizontalScrollView
+                        android:id="@+id/title_horsv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/right_title_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <include layout="@layout/item_right_tab_title" />
+                        </LinearLayout>
+                    </com.yuanda.cy_professional_select_stock.ui.widget.LinkageHorizontalScrollView>
+                </LinearLayout>
+                <!-- 此部分是内容部分 用ScrollView实现上下滚动效果 -->
+                <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                    android:id="@+id/refreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.scwang.smart.refresh.header.ClassicsHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- 左侧内容的父容器 -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/left_listview"
+                            android:layout_width="94dp"
+                            android:layout_height="match_parent" />
+                        <!-- 右侧内容的父容器 实现水平滚动 -->
+
+                        <com.yuanda.cy_professional_select_stock.ui.widget.LinkageHorizontalScrollView
+                            android:id="@+id/content_horsv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/right_listview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/design_default_color_primary_variant" />
+                        </com.yuanda.cy_professional_select_stock.ui.widget.LinkageHorizontalScrollView>
+                    </LinearLayout>
+
+                    <com.scwang.smart.refresh.footer.ClassicsFooter
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
